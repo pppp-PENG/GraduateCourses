@@ -1,0 +1,158 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, color, enumitem, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subcaption}
+\title{\textbf{Homework 2}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item For a d-dimensional binary linear classifier, its VC dimension is $d + 1$.
+    \item Test error is the error on the test dataset, while out-of-sample error is the expected error on the entire distribution. Test error is used to estimate out-of-sample error.
+    \item False. If in-sample error is very small, it may be due to overfitting, leading to a large out-of-sample error.
+    \item 3.
+    \newline 1) Logistic regression (LR) is designed for classification. % chktex 10
+    \newline 2) LR hasn't a closed-form solution, requiring iterative optimization. % chktex 10
+    \newline 4) LR can be applied to multi-class classification with softmax. % chktex 10
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Let $\mathbf 1$ denotes all-one vector, we have:
+    \begin{gather}
+        \notag \mathcal L(\Theta, \mathbf b) = \frac{1}{n} \sum_{i=1}^n [\log(\mathbf 1^T e^{\Theta \mathbf x_i + b}) - \mathbf y^T(\Theta \mathbf x_i + \mathbf b)] \\
+        \notag \mathrm d \mathcal L(\Theta, \mathbf b) = \frac{1}{n} \sum_{i=1}^n [\frac{e^{\Theta \mathbf x_i + b}}{\mathbf 1^T e^{\Theta \mathbf x_i + b}} \mathbf x_i^T - \mathbf y^T \mathbf x_i^T] d\Theta + \frac{1}{n} \sum_{i=1}^n [\frac{e^{\Theta \mathbf x_i + b}}{\mathbf 1^T e^{\Theta \mathbf x_i + b}} - \mathbf y^T] db \\
+        \notag \frac{\mathrm d \mathcal L(\Theta, \mathbf b)}{\mathrm d \Theta} = \frac{1}{n} \sum_{i=1}^n [\frac{e^{\Theta \mathbf x_i + b}}{\mathbf 1^T e^{\Theta \mathbf x_i + b}} - \mathbf y^T] \mathbf x_i^T \\
+        \notag \frac{\mathrm d \mathcal L(\Theta, \mathbf b)}{\mathrm d \mathbf b} = \frac{1}{n} \sum_{i=1}^n [\frac{e^{\Theta \mathbf x_i + b}}{\mathbf 1^T e^{\Theta \mathbf x_i + b}} - \mathbf y^T]
+    \end{gather}
+    \item  The figure of training loss and test loss of two optimization algorithms are Figure (a) and Figure (b) respectively, while the figure of training accuracy and test accuracy of two optimization algorithms are Figure (c) and Figure (d) respectively.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p2/Train-Test_Loss_coffee_dataset.png}
+            \caption{Loss of Coffee Dataset}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p2/Train-Test_Loss_weather_dataset.png}
+            \caption{Loss of Weather Dataset}
+        \end{subfigure}
+
+        \vspace{1em}
+
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p2/Train-Test_Acc_coffee_dataset.png}
+            \caption{Accuracy of Coffee Dataset}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p2/Train-Test_Acc_weather_dataset.png}
+            \caption{Accuracy of Weather Dataset}
+        \end{subfigure}
+    \end{figure}
+    (i) Convergence speed: AGD is faster than GD in both datasets. \\
+    (ii) Accuracy: AGD achieves higher training and test accuracy than GD in both datasets. \\
+    (iii) Overfitting: AGD is more overfitting than GD in weather dataset, while both algorithms don't have overfitting in coffee dataset.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  The figures of optimality gap $||x_k - x^*||_2$ obtained by the three learning rate schedules are shown in Figure 2.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{../code_source/p3/optimality_gap_figure.png}
+        \caption{Optimality Gap under Different Learning Rate Schedules}
+    \end{figure}
+    (i) From the figure, we can see that among the three learning rate schedules, the geometrically diminishing learning rate converges to optimal solution, while others do not. \\
+    (ii) The speed of constant learning rate and geometrically diminishing learning rate is faster than that of polynomial diminishing learning rate. \\
+    (iii) Subgradient descent is similar to gradient descent, but it is more sensitive to learning rate schedule.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Follow the hint, we have:
+    \begin{align}
+        \notag \min \text{Er}_{\text{in}}(f) & = \min \frac{1}{n} \sum_{i=1}^n {(f(x_i) - y_i)}^2 \\
+        \notag & = \min_w \frac{1}{n} \sum_{i=1}^n {\left (\sum_{k=0}^K w_k L_k(x_i) - y_i \right )}^2 \\
+        \notag & = \min_w \frac{1}{n} ||A w - y||_2^2
+    \end{align}
+    While $A$ is defined as:
+    \begin{gather}
+        \notag A = \begin{bmatrix}
+            L_0(x_1) & L_1(x_1) & \cdots & L_K(x_1) \\
+            L_0(x_2) & L_1(x_2) & \cdots & L_K(x_2) \\
+            \vdots & \vdots & \ddots & \vdots \\
+            L_0(x_n) & L_1(x_n) & \cdots & L_K(x_n)
+        \end{bmatrix}
+    \end{gather}
+    And we have:
+    \begin{gather}
+        \notag w^* = {(A^T A)}^{-1} A^T y
+    \end{gather}
+    For $f_2$ and $f_{10}$, we need to compute:
+    \begin{gather}
+        \notag w_2^* = A_{:2}^T {(A_{:2} A_{:2}^T)}^{-1} y \\
+        \notag w_{10}^* = A_{:10}^T {(A_{:10} A_{:10}^T)}^{-1} y \\
+        \notag A_{:k} = \begin{bmatrix}
+            L_0(x_1) & L_1(x_1) & \cdots & L_k(x_1) \\
+            L_0(x_2) & L_1(x_2) & \cdots & L_k(x_2) \\
+            \vdots & \vdots & \ddots & \vdots \\
+            L_0(x_n) & L_1(x_n) & \cdots & L_k(x_n)
+        \end{bmatrix}
+    \end{gather}
+    \item  We denote that $w_k = 0,\forall k > K, \quad a_q = 0,\forall q > Q_g$, then
+    \begin{align}
+        \notag \text{Er}_{\text{out}}(f_K) & = \mathbb E_{x,\epsilon}[{(f_K(x) - g(x))}^2] \\
+        \notag & = \mathbb E_x \left [{\left (\sum_{k=0}^K w_k L_k(x) - \frac{1}{C_Q}\sum_{q=0}^{Q_g} a_q L_q(x)\right )}^2\right ] \\
+        \notag & = \mathbb E_x \left [{\left (\sum_{k=0}^{\max(K, Q_g)} (w_k - \frac{a_k}{C_Q}) L_k(x)\right )}^2\right ]
+    \end{align}
+    By using the orthogonality of Legendre polynomials, we have:
+    \begin{align}
+        \notag \text{Er}_{\text{out}}(f_K) & = \mathbb E_x \left [\sum_{k=0}^{\max(K, Q_g)} {\left (w_k - \frac{a_k}{C_Q}\right )}^2 \right ] \mathbb E_x{[L_k(x)]}^2
+    \end{align}
+    Since $\mathbb E_x{[L_k(x)]}^2 = \frac{1}{2} \int_{-1}^{1} {[L_k(x)]}^2 dx = \frac{1}{2k + 1}$, we have:
+    \begin{align}
+        \notag \text{Er}_{\text{out}}(f_K) & = \mathbb E_x \left [\sum_{k=0}^{\max(K, Q_g)} \frac{{\left (w_k - \frac{a_k}{C_Q}\right )}^2} {2k+1}\right ]
+    \end{align}
+    \item  The figures of heat maps are as follows:
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p4/Impact_of_Qg_n.png}
+            % \caption{$\text{Er}_{\text{out}}(f_K)$ vs. $Q_g$ and $n$}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.48\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{../code_source/p4/Impact_of_sigma_n.png}
+            % \caption{$\text{Er}_{\text{out}}(f_K)$ vs. $\sigma$ and $n$}
+        \end{subfigure}
+    \end{figure}
+    The noise level $\sigma_2$, the target complexity $Q_g$, and the number of data points $n$ all affect overfitting. \\
+    $n$ affects it most, a large $n$ can efficiently alleviate overfitting, while others affect it less significantly.
+\end{enumerate}
+\end{problem}
+
+\end{document} % chktex 17

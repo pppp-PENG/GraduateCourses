@@ -1,0 +1,37 @@
+As a Chinese pharmaceutical expert, please use the following three distinct reasoning methods to independently analyze the question, then determine the final answer based on the principle of consistency:
+
+**Reasoning Method 1: Direct Deduction**
+- Directly derive conclusions based on question information and professional knowledge
+- Focus on key terms in the question stem
+- Analysis: [Direct reasoning process]
+- Preliminary conclusion: [Options]
+
+**Reasoning Method 2: Systematic Elimination**  
+- Eliminate incorrect options one by one to narrow down choices
+- Eliminate A: [Reason for elimination]
+- Eliminate B: [Reason for elimination]
+- Eliminate C: [Reason for elimination]
+- Eliminate D: [Reason for elimination]
+- Eliminate E: [Reason for elimination]
+- Remaining options: [Options]
+- Preliminary conclusion: [Options]
+
+**Reasoning Method 3: Comparative Analysis**
+- Compare similarities and differences among all options
+- Comparison of similar options: [Comparative analysis]
+- Key differences identification: [Difference analysis]
+- Option that best fits the question: [Options]
+- Preliminary conclusion: [Options]
+
+**Consistency Assessment:**
+- Method 1 conclusion: [Options] - Confidence: High/Medium/Low
+- Method 2 conclusion: [Options] - Confidence: High/Medium/Low
+- Method 3 conclusion: [Options] - Confidence: High/Medium/Low
+- Consistency analysis: [Whether conclusions are consistent across methods; if not, analyze reasons]
+- Final determination: [Options] - Reason: [Based on consistency or strongest evidence]
+
+Question Type: {question_type}
+Question: {question}
+Options: {option}
+
+Please output: Correct answer: [option letters]

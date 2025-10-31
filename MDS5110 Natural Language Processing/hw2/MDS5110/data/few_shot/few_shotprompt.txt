@@ -1,0 +1,57 @@
+Please answer the following multiple-choice question as a professional pharmacist. Note: The question may have single or multiple correct answers. I will first provide several examples for you to learn the answer format and reasoning approach.
+
+**Example 1 (Drug mechanism question):**
+Question: 某患者上呼吸道感染，用氨苄西林治疗一周，未见明显好转，后改用舒他西林，症状得到改善。关于舒他西林结构和临床使用的说法，错误的是（）。
+A. 为一种前体药物
+B. 给药后，在体内非特定酯酶的作用下水解成氨苄西林和舒巴坦
+C. 对β-内酰胺酶的稳定性强于氨苄西林
+D. 抗菌效果优于氨苄西林，原因是它在体内生成的两种药物都有较强的抗菌活性
+E. 可以口服，且口服后吸收迅速
+Reasoning: 舒他西林是氨苄西林与舒巴坦的酯化物前体药物，口服吸收后在体内水解为氨苄西林和舒巴坦。舒巴坦是β-内酰胺酶抑制剂，本身抗菌活性很弱，主要作用是保护氨苄西林不被酶水解。因此选项D错误，因为舒巴坦没有强抗菌活性。
+Correct Answer: [D]
+
+**Example 2 (Drug classification question):**
+Question: 属于长效β2肾上腺素受体激动剂，可用于哮喘长期维持治疗的药物是（）。
+A. 噻托溴铵
+B. 特布他林
+C. 布地奈德
+D. 孟鲁司特
+E. 福莫特罗
+Reasoning: 噻托溴铵是M胆碱受体阻断剂，特布他林是短效β2受体激动剂，布地奈德是吸入性糖皮质激素，孟鲁司特是白三烯受体阻断剂，福莫特罗是长效β2受体激动剂，适用于哮喘长期维持治疗。
+Correct Answer: [E]
+
+**Example 3 (Therapeutic indication question):**
+Question: 用于治疗干眼症的药物是（）。
+A. 聚乙二醇滴眼液
+B. 硫酸阿托品眼用凝胶
+C. 雷珠单抗注射液
+D. 毛果芸香碱滴眼液
+E. 丙美卡因滴眼液
+Reasoning: 聚乙二醇滴眼液是人工泪液，用于干眼症；阿托品用于散瞳和睫状肌麻痹；雷珠单抗用于湿性黄斑变性；毛果芸香碱用于青光眼；丙美卡因是表面麻醉药。
+Correct Answer: [A]
+
+**Example 4 (Patient education question):**
+Question: 患者，女，28岁，因痤疮就诊，给予异维A酸胶囊。关于该患者用药教育的说法，错误的是（）。
+A. 治疗期间及停药后3个月内应做好避孕措施
+B. 治疗期间若发生皮肤黏膜干燥，应减量或停药
+C. 不良反应常见，但停药后绝大多数可恢复
+D. 治疗最初2个月可能导致肝酶异常，必要时检查肝功能
+E. 部分患者用药2～4周时出现一过性皮疹加重现象
+Reasoning: 皮肤黏膜干燥是异维A酸最常见的不良反应，但通常是可耐受的，不是减量或停药的指征，建议使用皮肤屏障修复剂缓解。其他选项均正确：A(致畸性)、C(不良反应可逆)、D(肝毒性监测)、E(皮疹暂时加重)。
+Correct Answer: [B]
+
+**Example 5 (Pharmacology classification question):**
+Question: 属于维生素K拮抗剂的抗凝血药物是（）。
+A. 依诺肝素
+B. 氯吡格雷
+C. 华法林
+D. 利伐沙班
+E. 达比加群酯
+Reasoning: 华法林通过抑制维生素K依赖的凝血因子合成而发挥抗凝作用；依诺肝素是低分子肝素；氯吡格雷是抗血小板药；利伐沙班和达比加群酯是新型口服抗凝药，分别抑制Xa因子和IIa因子。
+Correct Answer: [C]
+
+Now please answer the following {question_type} question:
+{question}
+{option}
+
+Please follow this format: First provide brief reasoning, then output "Correct Answer: [Option Combination]" such as [AB] or [BCDE].

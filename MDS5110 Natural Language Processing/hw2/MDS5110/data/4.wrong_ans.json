@@ -1,0 +1,178 @@
+[
+    {
+        "id": 0,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 27. 根据国家药品监督管理局，公安部，国家卫⽣健康委员会的有关规定，⼜服固体制剂每剂量单位含羟考酮碱不超过5毫克，且不含其他⿇醉药品，精神药品或者药品类易制毒化学品的复⽅制剂列⼊（）。\nOptions: A. 含⿇醉药品复⽅制剂的管理\nB. 第⼆类精神药品管理\nC. 第⼀类精神药品管理\nD. 医疗⽤毒性药品管理\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "A"
+    },
+    {
+        "id": 1,
+        "query": "\nQuestion Type: 多项选择题\nQuestion: 112. 患者，男，70岁，因抑郁症长期服⽤舍曲林。新诊断为帕⾦森病，宜选⽤的药物有（）。\nOptions: A. 司来吉兰\nB. 普拉克索\nC. ⾦刚烷胺\nD. 吡贝地尔\nE. 恩他卡朋\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A, B, C, D, E",
+        "question_type": "多项选择题",
+        "groundtruth": "BCDE",
+        "model_choice": "ABCDE"
+    },
+    {
+        "id": 9,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：雌⼆醇⼜服⼏乎⽆效，临床常⽤雌⼆醇贴⽚。近年来，随着微粒化技术问世，市⾯上亦出现了雌⼆醇⽚。某患者使⽤微粒化雌⼆醇⽚治疗雌激素缺乏综合征，每次2mg，每天服药⼀次，使⽤⼀段时间后，出现肝功能异常，后改⽤雌⼆醇贴⽚（每⽚2.5mg，每⽚可使⽤7⽇），不良反应消失。\n103. 雌⼆醇⽚属于⼩剂量⽚剂，应检查含量均匀度，根据《中国药典》规定，⼩剂量是指每⽚标⽰量⼩于（）。\nOptions: A. 25mg\nB. 1mg\nC. 5mg\nD. 10mg\nE. 50mg\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: C",
+        "question_type": "综合分析选择题",
+        "groundtruth": "A",
+        "model_choice": "C"
+    },
+    {
+        "id": 11,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 22. 关于药品标签、说明书管理的说法，错误的是（）。\nOptions: A. 同⼀药品上市许可持有⼈⽣产的同⼀药品，分别按处⽅药与⾮处⽅药管理的，⼆者包装颜⾊必须明显区别\nB. 由于包装尺⼨或者技术设备等原因，标签中的有效期⽆法标注“有效期⾄某年某⽉”的，可以标注有效期实际期限\nC. 对贮藏有特殊要求的药品，应当在标签的醒⽬位置注明\nD. 药品内标签⾄少应当标注药品通⽤名称、产品批号和有效期\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: B",
+        "question_type": "最佳选择题",
+        "groundtruth": "D",
+        "model_choice": "B"
+    },
+    {
+        "id": 14,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 1. 为配制有效氯浓度为500mg/L的消毒剂10L，需要次氯酸钠溶液（有效氯浓度为6.0%）和纯化⽔的量分别是（）。\nOptions: A. 83mL和9917mL\nB. 830mL和9170mL\nC. 120mL和9880mL\nD. 150mL和9850mL\nE. 500mL和9500mL\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: B.",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 17,
+        "query": "\nQuestion Type: 多项选择题\nQuestion: 117. 药物代谢是机体对药物的处置过程，下列关于药物代谢的说法，正确的有（）。\nOptions: A. ⾮甾体抗炎药舒林酸结构中的甲基亚砜，经还原后的代谢物才具有活性\nB. 抗抑郁药丙⽶嗪结构中的⼆甲胺⽚段，经N-脱甲基后的代谢物失去活性\nC. 驱⾍药阿苯达唑结构中的丙硫醚，经S-氧化后的代谢物才具有活性\nD. 抗癫痫药苯妥英钠结构中的⼀个芳环，发⽣氧化代谢后产⽣羟基化的代谢物仍具有活性\nE. 解热镇痛药保泰松结构中的⼀个芳环，发⽣氧化代谢后产⽣羟基化的保泰松仍具有活性\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A, C, D, E",
+        "question_type": "多项选择题",
+        "groundtruth": "ACE",
+        "model_choice": "ACDE"
+    },
+    {
+        "id": 20,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 14. ⽤烯丙基、环丙基甲基或环丁基甲基对吗啡及其类似物的叔胺部分进⾏修饰后，由阿⽚受体激动剂转为拮抗剂，属于阿⽚受体拮抗剂的是（）。\nOptions: \n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "抱歉，我无法提供具体的答案选项，因为我没有看到完整的问题和选项。请提供选项信息，以便我能够为您找到正确的答案。",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": ""
+    },
+    {
+        "id": 25,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 83. 结构中引⼊甲磺酰基，通过氢键作⽤增⼤了与酶的结合能⼒，使药效增强的药物是（）。\nOptions: \n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "对不起，我无法直接回答这个问题。请提供选项以便进一步分析。",
+        "question_type": "配伍选择题",
+        "groundtruth": "C",
+        "model_choice": ""
+    },
+    {
+        "id": 27,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：头孢呋⾟钠是⼀种半合成⼴谱抗⽣素，在⽔溶液中易降解，化学结构式如下。其药动学特征可⽤⼀室模型描述，半衰期约为1.1h，给药24h内，90%以上药物以原形从尿中排出。对肝肾功能正常的患者，临床上治疗肺炎时，每⽇三次，每次静脉注射剂量为0.5g。\n105. 某患者的表观分布容积为20L，每次静脉注射0.5g，则多次给药后的平均稳态⾎药浓度是（）。\nOptions: A. 75mg/L\nB. 4.96mg/L\nC. 3.13mg/L\nD. 119mg/L\nE. 2.5mg/L\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: E",
+        "question_type": "综合分析选择题",
+        "groundtruth": "B",
+        "model_choice": "E"
+    },
+    {
+        "id": 38,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：甲是药品上市许可持有⼈，依法持有甲钴胺⽚等药品品种； ⼄是药品⽣产企业，⽣产范围：⽚剂、胶囊剂； 丙是药品⽣产企业，⽣产范围：胶囊剂、颗粒剂； 丁是全国性药品批发企业，经营范围：⿇醉药品、中成药、中药饮⽚、化学药、⽣物制品，具备药品现代物流条件； 戊是县级区域性药品批发企业，经营范围：中成药、化学药； ⼰是药品零售连锁企业所属门店，经营类别：处⽅药、甲类⾮处⽅药、⼄类⾮处⽅药，经营范围：第⼆类精神药品、中成药、中药饮⽚、化学药。\n96. 药品监督管理部门检查发现⼰从个⼈处购进药品并销售，情节较轻，应当依法依规做出的处罚是（）。\nOptions: A. 责令改正，没收违法购进的药品和违法所得，并处违法购进药品货值⾦额⼆倍以上⼗倍以下的罚款，货值⾦额不⾜五万元的，按五万元计算\nB. 给予警告，责令限期改正：逾期不改正或者情节严重的，处以⼀千元以上三千元以下的罚款\nC. 没收违法销售的药品和违法所得，并处违法销售药品货值⾦额⼗倍以上⼆⼗倍以下的罚款，货值⾦额不⾜⼀万元的，按⼀万元计算\nD. 责令限期改正，予以警告：逾期不改正的，处⼗万元以上五⼗万元以下的罚款\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: B",
+        "question_type": "综合分析选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 43,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 84. 中毒解救需灌肠时，宜选⽤的灌肠液是（）。\nOptions: A. 硫酸镁溶液\nB. 淀粉溶液\nC. 植物油\nD. ⾼锰酸钾溶液（1:5000～1:10000）\nE. 1%肥皂⽔\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A",
+        "question_type": "配伍选择题",
+        "groundtruth": "E",
+        "model_choice": "A"
+    },
+    {
+        "id": 46,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 42. 根据《药品经营质量管理规范》，测量范围在－25℃～0℃之间的温湿度监测系统，测量设备的温度最⼤允许误差为（）。\nOptions: A. ±2.0℃\nB. ±0.5℃\nC. ±0.1℃\nD. ±1.0℃\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A.",
+        "question_type": "配伍选择题",
+        "groundtruth": "D",
+        "model_choice": "A"
+    },
+    {
+        "id": 47,
+        "query": "\nQuestion Type: 多项选择题\nQuestion: 120. 审⽅时要关注中西药联⽤的情况，下列药品中含有西药成分的有（）。\nOptions: A. ⿐炎康⽚\nB. 珍菊降压⽚\nC. 防风通圣丸\nD. 蛇胆川贝液\nE. 消渴丸\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A, B, C, D",
+        "question_type": "多项选择题",
+        "groundtruth": "ABE",
+        "model_choice": "ABCD"
+    },
+    {
+        "id": 49,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：为规范药品零售环节经营⾏为，某地药品监督管理部门对辖区内药品零售企业开展监督检查。检查发现： （1）甲药品零售企业涉嫌从⾮法渠道购进药品，部分批号的阿卡波糖⽚不能提供购进发票，且经追测码查询，供货单位系某医疗机构：涉嫌违规经营⽶⾮司酮⽚。 （2）⼄药品零售企业屡次绕开计算机系统销售过期的盐酸⼆甲双胍缓释⽚、⼆甲双胍格列本脲胶囊等药品：计算机系统中有多条超数量销售含⿇黄碱类复⽅制剂的销售记录，其中最多⼀次销售了50盒，企业留存了本次销售的处⽅。\n109. 针对⼄违规销售含⿇黄碱类复⽅制剂的⾏为，下列检查结论错误的是（）。\nOptions: A. ⼄的计算机系统未有效拦截含特殊药品复⽅制剂超数量销售\nB. ⼄配备的执业药师未严格履⾏处⽅审核职责\nC. ⼄涉嫌将含⿇黄碱类复⽅制剂流⼊⾮法渠道\nD. ⼄未对违规超量售出含⿇黄碱类复⽅制剂发起药品追回\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: C",
+        "question_type": "综合分析选择题",
+        "groundtruth": "D",
+        "model_choice": "C"
+    },
+    {
+        "id": 53,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 57. 根据《药品经营质量管理规范》及其有关附录⽂件，属于保温箱特有的验证项⽬是（）。\nOptions: A. 测点终端安装数量及位置确认\nB. 测点终端参数与数据联动传输确认\nC. 运输最长时限验证\nD. 极端温度保温性能验证\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: D",
+        "question_type": "配伍选择题",
+        "groundtruth": "C",
+        "model_choice": "D"
+    },
+    {
+        "id": 57,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 4. 抗哮喘药沙丁胺醇的化学结构式如下，其化学⾻架属于（）。\nOptions: A. 芳基丙酸类\nB. 芳氧丙醇胺类\nC. ⼆氢吡啶类\nD. 苯⼆氮卓类\nE. 苯⼄醇胺类\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: B",
+        "question_type": "最佳选择题",
+        "groundtruth": "E",
+        "model_choice": "B"
+    },
+    {
+        "id": 65,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 81. 在体外⽆活性，需要在体内⽔解开环发挥活性的药物是（）。\nOptions: \n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: 81. 在体外无活性，需要在体内水解开环发挥活性的药物是（）。",
+        "question_type": "配伍选择题",
+        "groundtruth": "D",
+        "model_choice": ""
+    },
+    {
+        "id": 67,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：甲是药品零售连锁企业所属门店，经营类别：处⽅药、甲类⾮处⽅药、⼄类⾮处⽅药，经营范围：第⼆类精神药品、⽣物制品、化学药、中成药、中药饮⽚。 ⼄是药品零售企业，经营类别：处⽅药、甲类⾮处⽅药、⼄类⾮处⽅药，经营范围：⽣物制品、化学药、中成药。 丙是药品零售企业，经营类别：⼄类⾮处⽅药，经营范围：⽣物制品、化学药、中成药。\n104. 根据处⽅药与⾮处⽅药分类管理规定，结合题⽬提供的信息，下列做法正确的是（）。\nOptions: A. 甲在经营场所内开架销售中药饮⽚百合、枸杞⼦\nB. 甲营业期间，⼀⽼⼈⾝体不适欲购买处⽅药速效救⼼丸，经询问发现⽼⼈有冠⼼病史，执业药师在没有处⽅的情况下，依然向其销售了该处⽅药，并建议其⽴即就诊\nC. ⼄建⽴处⽅药销售的处⽅管理制度，要求对售出的处⽅药处⽅进⾏抄录，处⽅原件返还消费者\nD. ⼄的执业药师在凭处⽅向个⼈消费者销售处⽅药时，结合其表状的疾病症状，告知其该处⽅药与另⼀处⽅药联合购买可以享受优惠\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: C",
+        "question_type": "综合分析选择题",
+        "groundtruth": "A",
+        "model_choice": "C"
+    },
+    {
+        "id": 76,
+        "query": "\nQuestion Type: 配伍选择题\nQuestion: 84. 根据《国家药品监督管理局职能配置、内设机构和⼈员编制规定》及其有关规定，负责组织开展执业药师考前培训、继续教育的是（）。\nOptions: A. 国家药品监督管理局⾼级研修学院\nB. 国家药品监督管理局执业药师资格认证中⼼\nC. 国家药典委员会\nD. 国家药品监督管理局信息中⼼\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: B",
+        "question_type": "配伍选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 81,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 40. 兼有抑菌作⽤的⿐⽤减充⾎剂是（）。\nOptions: A. 呋⿇滴⿐液\nB. 赛洛唑啉滴⿐液\nC. 羟甲唑啉⿐喷剂\nD. ⿇黄碱滴⿐液\nE. 左氧氟沙星滴⿐液\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: E",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": "E"
+    },
+    {
+        "id": 85,
+        "query": "\nQuestion Type: 综合分析选择题\nQuestion: 题干：秦某是⼀所中医药⼤学中医学专业硕⼠毕业⽣，已获得硕⼠学位，在校期间学过中药材知识和栽培技术，具有中药材辨识能⼒。临近毕业时，准备参加执业药师职业资格考试，但因专业⼯作年限不符合报名条件，未能参加考试。 秦某的⽼家在边远⼭区，交通不便，为解决家乡群众看病难题，毕业后主动返乡当村医。平时除给乡邻治病之外，还在⾃家地⾥种植地产中药材。\n95. 根据《中医药法》，关于秦某种植地产中药材的说法，正确的是（）。\nOptions: A. 销售给当地的中药饮⽚⽣产企业\nB. 将⾃产中药材加⼯成中药制剂⽅便村民使⽤\nC. 在其开设的诊所中煎汤药给村民治病\nD. 种植仅供⾃⽤的医疗⽤毒性中药材\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A.",
+        "question_type": "综合分析选择题",
+        "groundtruth": "C",
+        "model_choice": "A"
+    },
+    {
+        "id": 97,
+        "query": "\nQuestion Type: 最佳选择题\nQuestion: 14. 根据下列部门的主要职责、内设机构和⼈员编制规定，负责提出国家基本药物价格政策建议的部门是（）。\nOptions: A. 国家医疗保障局\nB. 国家卫⽣健康委员会\nC. 国家发展和改⾰委员会\nD. 国家市场监督管理总局\n\n请直接输出: 正确答案: [option letters]\n",
+        "model_answer": "正确答案: A",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "A"
+    }
+]

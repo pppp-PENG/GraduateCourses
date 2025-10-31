@@ -1,0 +1,242 @@
+[
+    {
+        "id": 0,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n27. 根据国家药品监督管理局，公安部，国家卫⽣健康委员会的有关规定，⼜服固体制剂每剂量单位含羟考酮碱不超过5毫克，且不含其他⿇醉药品，精神药品或者药品类易制毒化学品的复⽅制剂列⼊（）。\nA. 含⿇醉药品复⽅制剂的管理\nB. 第⼆类精神药品管理\nC. 第⼀类精神药品管理\nD. 医疗⽤毒性药品管理\n",
+        "model_answer": "A. 含⿇醉药品复⽅制剂的管理",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "A"
+    },
+    {
+        "id": 1,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n112. 患者，男，70岁，因抑郁症长期服⽤舍曲林。新诊断为帕⾦森病，宜选⽤的药物有（）。\nA. 司来吉兰\nB. 普拉克索\nC. ⾦刚烷胺\nD. 吡贝地尔\nE. 恩他卡朋\n",
+        "model_answer": "A. 司来吉兰\nB. 普拉克索\nC. 金刚烷胺\nD. 吡贝地尔",
+        "question_type": "多项选择题",
+        "groundtruth": "BCDE",
+        "model_choice": "D"
+    },
+    {
+        "id": 4,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n19. 根据药品管理法律法规及相关⽂件的规定，药品零售企业可以开架⾃选销售的药品是（）。\nA. 复⽅⽢草⽚\nB. 复⽅⾦银花颗粒\nC. 复⽅地芬诺酯⽚\nD. 复⽅枇杷喷托维林颗粒\n",
+        "model_answer": "A. 复⽅⽢草⽚",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "A"
+    },
+    {
+        "id": 11,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n22. 关于药品标签、说明书管理的说法，错误的是（）。\nA. 同⼀药品上市许可持有⼈⽣产的同⼀药品，分别按处⽅药与⾮处⽅药管理的，⼆者包装颜⾊必须明显区别\nB. 由于包装尺⼨或者技术设备等原因，标签中的有效期⽆法标注“有效期⾄某年某⽉”的，可以标注有效期实际期限\nC. 对贮藏有特殊要求的药品，应当在标签的醒⽬位置注明\nD. 药品内标签⾄少应当标注药品通⽤名称、产品批号和有效期\n",
+        "model_answer": "B. 由于包装尺⼨或者技术设备等原因，标签中的有效期⽆法标注“有效期⾄某年某⽉”的，可以标注有效期实际期限",
+        "question_type": "最佳选择题",
+        "groundtruth": "D",
+        "model_choice": "B"
+    },
+    {
+        "id": 14,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n1. 为配制有效氯浓度为500mg/L的消毒剂10L，需要次氯酸钠溶液（有效氯浓度为6.0%）和纯化⽔的量分别是（）。\nA. 83mL和9917mL\nB. 830mL和9170mL\nC. 120mL和9880mL\nD. 150mL和9850mL\nE. 500mL和9500mL\n",
+        "model_answer": "B. 830mL和9170mL",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 17,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n117. 药物代谢是机体对药物的处置过程，下列关于药物代谢的说法，正确的有（）。\nA. ⾮甾体抗炎药舒林酸结构中的甲基亚砜，经还原后的代谢物才具有活性\nB. 抗抑郁药丙⽶嗪结构中的⼆甲胺⽚段，经N-脱甲基后的代谢物失去活性\nC. 驱⾍药阿苯达唑结构中的丙硫醚，经S-氧化后的代谢物才具有活性\nD. 抗癫痫药苯妥英钠结构中的⼀个芳环，发⽣氧化代谢后产⽣羟基化的代谢物仍具有活性\nE. 解热镇痛药保泰松结构中的⼀个芳环，发⽣氧化代谢后产⽣羟基化的保泰松仍具有活性\n",
+        "model_answer": "A, C, D, E",
+        "question_type": "多项选择题",
+        "groundtruth": "ACE",
+        "model_choice": "ACDE"
+    },
+    {
+        "id": 20,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n14. ⽤烯丙基、环丙基甲基或环丁基甲基对吗啡及其类似物的叔胺部分进⾏修饰后，由阿⽚受体激动剂转为拮抗剂，属于阿⽚受体拮抗剂的是（）。\n\n",
+        "model_answer": "C. 纳洛酮",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": "C"
+    },
+    {
+        "id": 24,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n63. 表⽰药物在体内波动程度的参数是（）。\nA. Cmax\nB. DE\nC. MRT\nD. AUMC\nE. AUC\n",
+        "model_answer": "E. AUC",
+        "question_type": "配伍选择题",
+        "groundtruth": "A",
+        "model_choice": "C"
+    },
+    {
+        "id": 25,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n83. 结构中引⼊甲磺酰基，通过氢键作⽤增⼤了与酶的结合能⼒，使药效增强的药物是（）。\n\n",
+        "model_answer": "D.",
+        "question_type": "配伍选择题",
+        "groundtruth": "C",
+        "model_choice": "D"
+    },
+    {
+        "id": 27,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 综合分析选择题, please direct the correct answer option and do not output anything else.\n题干：头孢呋⾟钠是⼀种半合成⼴谱抗⽣素，在⽔溶液中易降解，化学结构式如下。其药动学特征可⽤⼀室模型描述，半衰期约为1.1h，给药24h内，90%以上药物以原形从尿中排出。对肝肾功能正常的患者，临床上治疗肺炎时，每⽇三次，每次静脉注射剂量为0.5g。\n105. 某患者的表观分布容积为20L，每次静脉注射0.5g，则多次给药后的平均稳态⾎药浓度是（）。\nA. 75mg/L\nB. 4.96mg/L\nC. 3.13mg/L\nD. 119mg/L\nE. 2.5mg/L\n",
+        "model_answer": "C. 3.13mg/L",
+        "question_type": "综合分析选择题",
+        "groundtruth": "B",
+        "model_choice": "C"
+    },
+    {
+        "id": 28,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n116. 关于药物临床试验的说法，正确的有（）。\nA. Ⅲ期临床试验是治疗作⽤确证阶段\nB. Ⅳ期临床试验是新药上市前的应⽤研究阶段\nC. Ⅰ期临床试验是初步的临床药理学及⼈体安全性评价试验\nD. Ⅱ期临床试验是治疗作⽤初步评价阶段\n",
+        "model_answer": "A. Ⅲ期临床试验是治疗作⽤确证阶段  \nC. Ⅰ期临床试验是初步的临床药理学及⼈体安全性评价试验  \nD. Ⅱ期临床试验是治疗作⽤初步评价阶段  ",
+        "question_type": "多项选择题",
+        "groundtruth": "ACD",
+        "model_choice": "D"
+    },
+    {
+        "id": 39,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n111. 据执业药师注册管理的相关规定，取得执业药师职业资格证书并经注册后⽅可执业，下列属于执业单位的有（）。\nA. 药品连锁企业总部\nB. 药品检验机构\nC. 药品批发企业\nD. 医疗机构\n",
+        "model_answer": "A. 药品连锁企业总部\nC. 药品批发企业\nD. 医疗机构",
+        "question_type": "多项选择题",
+        "groundtruth": "ACD",
+        "model_choice": "D"
+    },
+    {
+        "id": 43,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n84. 中毒解救需灌肠时，宜选⽤的灌肠液是（）。\nA. 硫酸镁溶液\nB. 淀粉溶液\nC. 植物油\nD. ⾼锰酸钾溶液（1:5000～1:10000）\nE. 1%肥皂⽔\n",
+        "model_answer": "A. 硫酸镁溶液",
+        "question_type": "配伍选择题",
+        "groundtruth": "E",
+        "model_choice": "A"
+    },
+    {
+        "id": 47,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n120. 审⽅时要关注中西药联⽤的情况，下列药品中含有西药成分的有（）。\nA. ⿐炎康⽚\nB. 珍菊降压⽚\nC. 防风通圣丸\nD. 蛇胆川贝液\nE. 消渴丸\n",
+        "model_answer": "A. ⿐炎康⽚  \nB. 珍菊降压⽚  ",
+        "question_type": "多项选择题",
+        "groundtruth": "ABE",
+        "model_choice": "B"
+    },
+    {
+        "id": 49,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 综合分析选择题, please direct the correct answer option and do not output anything else.\n题干：为规范药品零售环节经营⾏为，某地药品监督管理部门对辖区内药品零售企业开展监督检查。检查发现： （1）甲药品零售企业涉嫌从⾮法渠道购进药品，部分批号的阿卡波糖⽚不能提供购进发票，且经追测码查询，供货单位系某医疗机构：涉嫌违规经营⽶⾮司酮⽚。 （2）⼄药品零售企业屡次绕开计算机系统销售过期的盐酸⼆甲双胍缓释⽚、⼆甲双胍格列本脲胶囊等药品：计算机系统中有多条超数量销售含⿇黄碱类复⽅制剂的销售记录，其中最多⼀次销售了50盒，企业留存了本次销售的处⽅。\n109. 针对⼄违规销售含⿇黄碱类复⽅制剂的⾏为，下列检查结论错误的是（）。\nA. ⼄的计算机系统未有效拦截含特殊药品复⽅制剂超数量销售\nB. ⼄配备的执业药师未严格履⾏处⽅审核职责\nC. ⼄涉嫌将含⿇黄碱类复⽅制剂流⼊⾮法渠道\nD. ⼄未对违规超量售出含⿇黄碱类复⽅制剂发起药品追回\n",
+        "model_answer": "C. ⼄涉嫌将含⿇黄碱类复⽅制剂流⼊⾮法渠道",
+        "question_type": "综合分析选择题",
+        "groundtruth": "D",
+        "model_choice": "C"
+    },
+    {
+        "id": 53,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n57. 根据《药品经营质量管理规范》及其有关附录⽂件，属于保温箱特有的验证项⽬是（）。\nA. 测点终端安装数量及位置确认\nB. 测点终端参数与数据联动传输确认\nC. 运输最长时限验证\nD. 极端温度保温性能验证\n",
+        "model_answer": "D. 极端温度保温性能验证",
+        "question_type": "配伍选择题",
+        "groundtruth": "C",
+        "model_choice": "D"
+    },
+    {
+        "id": 54,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n95. 在药品处⽅中，常作为⽔不溶性包⾐材料的是（）。\nA. 羧甲基纤维素钠（CMC-Na）\nB. 羟丙基甲基纤维素（HPMC）\nC. ⼄基纤维素（EC）\nD. 甲基纤维素（MC）\nE. 羟丙基纤维素（HPC）\n",
+        "model_answer": "C. ⼄基纤维素（EC）",
+        "question_type": "配伍选择题",
+        "groundtruth": "C",
+        "model_choice": "E"
+    },
+    {
+        "id": 56,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n25. 下列符合化妆品管理要求的是（）。\nA. 特殊化妆品需经省级以上药品监督管理部门注册后⽅可⽣产、进⼜和经营\nB. 国产普通化妆品在上市销售后，向所在地省级药品监督管理部门备案\nC. 国家按照风险程度对化妆品、化妆品原料实⾏分类管理\nD. 已经注册的特殊化妆品在⽣产⼯艺、功效宣称等⽅⾯发⽣任何变化，注册⼈均应当向原注册部门申请变更注册\n",
+        "model_answer": "D. 已经注册的特殊化妆品在⽣产⼯艺、功效宣称等⽅⾯发⽣任何变化，注册⼈均应当向原注册部门申请变更注册",
+        "question_type": "最佳选择题",
+        "groundtruth": "C",
+        "model_choice": "D"
+    },
+    {
+        "id": 57,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n4. 抗哮喘药沙丁胺醇的化学结构式如下，其化学⾻架属于（）。\nA. 芳基丙酸类\nB. 芳氧丙醇胺类\nC. ⼆氢吡啶类\nD. 苯⼆氮卓类\nE. 苯⼄醇胺类\n",
+        "model_answer": "B. 芳氧丙醇胺类",
+        "question_type": "最佳选择题",
+        "groundtruth": "E",
+        "model_choice": "B"
+    },
+    {
+        "id": 65,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n81. 在体外⽆活性，需要在体内⽔解开环发挥活性的药物是（）。\n\n",
+        "model_answer": "E. 磺胺醋酰",
+        "question_type": "配伍选择题",
+        "groundtruth": "D",
+        "model_choice": "E"
+    },
+    {
+        "id": 76,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n84. 根据《国家药品监督管理局职能配置、内设机构和⼈员编制规定》及其有关规定，负责组织开展执业药师考前培训、继续教育的是（）。\nA. 国家药品监督管理局⾼级研修学院\nB. 国家药品监督管理局执业药师资格认证中⼼\nC. 国家药典委员会\nD. 国家药品监督管理局信息中⼼\n",
+        "model_answer": "B. 国家药品监督管理局执业药师资格认证中⼼",
+        "question_type": "配伍选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 79,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n2118. 患者，⼥，65岁。诊断为⾻质疏松症，给予鲑降钙素注射液治疗，⽤药期间需注意的事项有（）。\nA. 应当注意有⽆⽪下和⽛龈出⾎\nB. 必须补充⾜量的钙剂和维⽣素D\nC. 对蛋⽩质过敏者，使⽤前需做⽪肤敏感试验\nD. 可能出现低⾎糖反应\nE. 常出现⾯部潮红的不良反应\n",
+        "model_answer": "B. 必须补充⾜量的钙剂和维⽣素D\nC. 对蛋⽩质过敏者，使⽤前需做⽪肤敏感试验\nE. 常出现⾯部潮红的不良反应",
+        "question_type": "多项选择题",
+        "groundtruth": "BCE",
+        "model_choice": "E"
+    },
+    {
+        "id": 80,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n36. 可⼲扰转录过程和阻⽌RNA合成的抗肿瘤药物是（）。\nA. 顺铂\nB. 塞替派\nC. 丝裂霉素\nD. 多柔⽐星\nE. 长春瑞滨\n",
+        "model_answer": "C. 丝裂霉素",
+        "question_type": "最佳选择题",
+        "groundtruth": "D",
+        "model_choice": "C"
+    },
+    {
+        "id": 81,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n40. 兼有抑菌作⽤的⿐⽤减充⾎剂是（）。\nA. 呋⿇滴⿐液\nB. 赛洛唑啉滴⿐液\nC. 羟甲唑啉⿐喷剂\nD. ⿇黄碱滴⿐液\nE. 左氧氟沙星滴⿐液\n",
+        "model_answer": "E. 左氧氟沙星滴⿐液",
+        "question_type": "最佳选择题",
+        "groundtruth": "A",
+        "model_choice": "E"
+    },
+    {
+        "id": 84,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n21. 关于疫苗流通管理的说法，错误的是（）。\nA. 疫苗上市许可持有⼈在销售疫苗时，应当提供加盖其印章的批签发证明复印件或者电⼦⽂件\nB. 疫苗上市许可持有⼈应当按照采购合同约定，向疾病防控制机构和接种单位直接供应疫苗\nC. 疫苗上市许可持有⼈应当按照规定，建⽴真实、准确完整的销售记录，并保存⾄疫苗有效期满后不少于五年备查\nD. 疾病预防控制机构、接种单位应当建⽴疫苗定期检查制度\n",
+        "model_answer": "D. 疾病预防控制机构、接种单位应当建⽴疫苗定期检查制度",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "D"
+    },
+    {
+        "id": 85,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 综合分析选择题, please direct the correct answer option and do not output anything else.\n题干：秦某是⼀所中医药⼤学中医学专业硕⼠毕业⽣，已获得硕⼠学位，在校期间学过中药材知识和栽培技术，具有中药材辨识能⼒。临近毕业时，准备参加执业药师职业资格考试，但因专业⼯作年限不符合报名条件，未能参加考试。 秦某的⽼家在边远⼭区，交通不便，为解决家乡群众看病难题，毕业后主动返乡当村医。平时除给乡邻治病之外，还在⾃家地⾥种植地产中药材。\n95. 根据《中医药法》，关于秦某种植地产中药材的说法，正确的是（）。\nA. 销售给当地的中药饮⽚⽣产企业\nB. 将⾃产中药材加⼯成中药制剂⽅便村民使⽤\nC. 在其开设的诊所中煎汤药给村民治病\nD. 种植仅供⾃⽤的医疗⽤毒性中药材\n",
+        "model_answer": "A. 销售给当地的中药饮⽚⽣产企业",
+        "question_type": "综合分析选择题",
+        "groundtruth": "C",
+        "model_choice": "A"
+    },
+    {
+        "id": 86,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n30. 关于⽣物等效性研究的实施与样品采集的说法，正确的是（）。\nA. 通常采⽤受试制剂和参⽐制剂的单个最低规格制剂进⾏试验\nB. 从0时到最后⼀个样品采集时间t的曲线下⾯积与时间从0到⽆穷⼤的AUC之⽐通常应当达于70%\nC. 整个采样时间不少于3个末端消除半衰期\nD. 受试制剂与参⽐制剂药物含量的差值应⼩于2%\nE. ⼀般情况下，受试者试验前⾄少空腹8⼩时\n",
+        "model_answer": "E. ⼀般情况下，受试者试验前⾄少空腹8⼩时",
+        "question_type": "最佳选择题",
+        "groundtruth": "C",
+        "model_choice": "E"
+    },
+    {
+        "id": 88,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 多项选择题, please direct the correct answer option and do not output anything else.\n119. 属于碳青霉烯类的抗菌药物有（）。\nA. 亚胺培南\nB. 氨曲南\nC. 美罗培南\nD. 厄他培南\nE. ⽐阿培南\n",
+        "model_answer": "A. 亚胺培南\nC. 美罗培南\nD. 厄他培南\nE. ⽐阿培南",
+        "question_type": "多项选择题",
+        "groundtruth": "ACDE",
+        "model_choice": "E"
+    },
+    {
+        "id": 92,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 配伍选择题, please direct the correct answer option and do not output anything else.\n56. 根据《药品经营质量管理规范》及其有关附录⽂件，属于温湿度⾃动监测系统特有的验证项⽬是（）。\nA. 测点终端安装数量及位置确认\nB. 测点终端参数与数据联动传输确认\nC. 运输最长时限验证\nD. 极端温度保温性能验证\n",
+        "model_answer": "B. 测点终端参数与数据联动传输确认",
+        "question_type": "配伍选择题",
+        "groundtruth": "A",
+        "model_choice": "B"
+    },
+    {
+        "id": 97,
+        "query": "\nPlease answer the multiple choice questions below, which's type is 最佳选择题, please direct the correct answer option and do not output anything else.\n14. 根据下列部门的主要职责、内设机构和⼈员编制规定，负责提出国家基本药物价格政策建议的部门是（）。\nA. 国家医疗保障局\nB. 国家卫⽣健康委员会\nC. 国家发展和改⾰委员会\nD. 国家市场监督管理总局\n",
+        "model_answer": "A. 国家医疗保障局",
+        "question_type": "最佳选择题",
+        "groundtruth": "B",
+        "model_choice": "A"
+    }
+]

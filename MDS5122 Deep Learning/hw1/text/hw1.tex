@@ -1,0 +1,195 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Environment and Reproducing code \\
+    \textbf{Environment: }
+    \begin{table}[H]
+        \caption{Environment}
+        \centering
+        \begin{tabular}{cccc}
+            \toprule
+            & RTX 4090 24GB \\
+            & CUDA Version: 12.4 \\
+            & python=3.11.11 \\
+            & jupyter==1.1.1 \\
+            & torch==2.6.0 \\
+            & torchvision==0.21.0 \\
+            & matplotlib==3.10.3 \\
+            & tqdm==4.67.1 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \textbf{Reproducing code: }
+    \begin{table}[H]
+        \caption{Preferance of Example}
+        \centering
+        \begin{tabular}{ccccc}
+            \toprule
+            \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+            \midrule
+            7.28M & 128 & 5s/epoch & 0.227 & 87.17\% \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \item  \textbf{Methods of Accuracy Improvement: }
+    \begin{enumerate}[label = (\alph*)]
+        \item Residual mechanism: \\
+        Replace some convolutional layers with Residual Blocks.
+        \begin{table}[H]
+            \caption{Preferance of Residual Mechanism}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                6.10M & 128 & 5s/epoch & 0.321 & 87.43\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the number of parameters is reduced, but the accuracy is slightly improved.
+        \item Deeper \& Wider Network: \\
+        Increase the number of residual blocks and the number of channels in each layer.
+        \begin{table}[H]
+            \caption{Preferance of Deeper \& Wider Network}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                11.03M & 128 & 6s/epoch & 0.051 & 91.09\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the accuracy is significantly improved.
+        \item Optimizer Change: \\
+        Change the optimizer from Adam to SGD or AdamW. (AdamW performs better in my experiments.)
+        \begin{table}[H]
+            \caption{Preferance of AdamW Optimizer}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                11.03M & 128 & 6s/epoch & 0.008 & 92.57\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the accuracy is imporved slightly, but the loss is reduced significantly.
+        So I think the model may be overfitting.
+        I need to take some data augmentation methods to solve this.
+        \item Data Augmentation: \\
+        Add ColorJitter to the data augmentation methods of baseline.
+        \begin{table}[H]
+            \caption{Preferance of Data Augmentation}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                11.03M & 128 & 6s/epoch & 0.010 & 92.61\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the accuracy is remained almost the same, but the loss increased slightly.
+        That means the model is less likely to overfit.
+        \item Attention Mechanism: \\
+        Replace the residual blocks with attention blocks (framework like ViT)
+        \begin{table}[H]
+            \caption{Preferance of Attention Mechanism}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                8.97M & 128 & 10s/epoch & 0.015 & 90.85\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the accuracy decreased.
+        This may be because the attention mechanism is suitable for NLP tasks but not for image classification tasks.
+        Another reason may be that the attention mechanism requires more data to train the model, since cifar10 is a small dataset, the model may not be fully trained.
+        \item Structure Improvement \\
+        Base on the above experiments, I choose to use residual mechanism, and try several experiments to modify the structure of my model to find the best structure.
+        Finally, I choose a 17-layer residual network.
+        \begin{table}[H]
+            \caption{Preferance of Final Structure}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                53.24M & 128 & 10s/epoch & 0.004 & 93.24\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+    \item \textbf{Classification on Tiny-imagenet Dataset}
+    \begin{enumerate}[label = (\alph*)]
+        \item Reuse the Model:
+        Reuse the best model structure from cifar10 experiments, and modify the input size of the first layer to adapt to the 64$\times$64 images of tiny-imagenet dataset.
+        \begin{table}[H]
+            \caption{Preferance of Model in Cifar-10}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                46.87M & 64 & 16s/epoch & 0.1004 & 46.40\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+        We can see that the accuracy is 46.40\%, but the loss is extrimely low (0.1004).
+        This may be because the model is overfitting.
+        So we can try strongly data augmentation and regularization methods to solve this problem.
+        \item More Data Augmentation:
+        Add strongly RandomAffine and ColorJi. \\
+        And to accelarate the training speed, I modify the batch size to 1000 and number of workers to 8 in dataloader.
+        \begin{table}[H]
+            \caption{Preferance of Model in Cifar-10}
+            \centering
+            \begin{tabular}{ccccc}
+                \toprule
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \midrule
+                ?M & 128 & ?s/epoch & ? & ?\% \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+    \end{enumerate}
+    \item \textbf{Thoughts}
+    \begin{enumerate}[label = (\alph*)]
+        \item Residual mechanism can accelerate the reducing of training loss, and make the model easier to train.
+        \item A deeper and wider network can improve the performance of the model, but it may also lead to overfitting.
+        \item For solving overfitting, the best method in my experiments is data augmentation and adding dropout layers.
+        \item Changing the optimizer have little effect on the accuracy in my experiments.
+        \item Attention mechanism may not be suitable for image classification tasks, or it may require more data to train the model.
+        \item Attention layer has less parameters but slower training speed than residual layer.
+        \item Modify the batch size and number of workers in dataloader suitable can affect the training speed significantly. (It depends on the numbers of cpu cores and gpu memory size.)
+        \item Printing the training loss graph can help to find the suitable learning rate and epoch number.
+    \end{enumerate}
+    \item \textbf{Difficulties}
+    \begin{enumerate}[label = (\alph*)]
+        \item The tiny-imagenet dataset has some \textbf{gray images}, which throw errors when putting them into dataloader. (Gray images have only 1 channel, while others are 3 channels input, which cause dimension mismatch error in dataloader.) \\
+        -- Solution: I write a function to convert gray images to RGB images before loading them into dataloader.
+        \item The model training is too slow when training on tiny-imagenet dataset (64$\times$64). \\
+        -- Solution: I rewrite a new dataset class (myDataset.py), putting the transform operations in the new dataset class instead of huggingface's default dataset class, which can accelarate the data loading speed significantly.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

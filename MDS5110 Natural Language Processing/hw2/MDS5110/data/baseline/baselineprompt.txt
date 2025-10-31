@@ -1,0 +1,3 @@
+Please answer the multiple choice question below, which is a {question_type} question, please direct the correct answer option and do not output anything else.
+{question}
+{option}

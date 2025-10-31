@@ -1,0 +1,25 @@
+You are a senior expert in the Chinese pharmaceutical field. Please analyze the question according to the following rigorous process:
+{question}
+{option}
+
+**Step 1: Question Type Identification**
+- {question_type}
+
+**Step 2: Key Information Extraction**
+- Mark keywords, constraints, and core requirements in the question
+
+**Step 3: Systematic Analysis**
+- For regulatory questions: Analyze based on relevant laws, regulations, and guidelines
+- For drug-related questions: Analyze based on pharmacological principles, clinical guidelines, and evidence-based medicine
+- For calculation questions: Analyze based on relevant formulas, calculation steps, and units
+
+**Step 4: Cross-verification**
+- For regulatory questions: Refer to the latest versions of "Drug Administration Law", "Good Supply Practice for Pharmaceutical Products", etc.
+- For drug-related questions: Base on pharmacological principles and clinical guidelines
+- For calculation questions: Perform complete calculation verification
+
+**Step 5: Final Confirmation**
+- Ensure the answer fully meets the question requirements
+- For multiple choice questions: Must select all correct options, without omission or over-selection
+
+Please output: Correct answer: [option letters]

@@ -1,0 +1,193 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings}
+\title{\textbf{Homework 3}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  The dual of each model are as follows:
+    \begin{align}
+        \notag \text{(i)} \quad \max_y \quad & 19y_1 + 55y_2 + 7y_3 \\
+        \notag \text{s.t.} \quad & y_1 + y_3 = 5 \\
+        \notag & y_1 + 4y_2 + 6y_3 \le 1 \\
+        \notag & y_1 - y_3 \le -4 \\
+        \notag & y_1 + 8y_2 \ge 0 \\
+        \notag & y_1 \ge 0, y_2 \le 0, y_3 \text{ free} \\
+        \notag \text{(ii)} \quad \min_y \quad & 20y_1 + 35y_2 + 15y_3 + 10y_4 + 6y_5 + 2y_6 \\
+        \notag \text{s.t.} \quad & 2y_1 + 7y_2 + 4y_3 + y_4 \ge 2 \\
+        \notag & -3y_1 + 2y_2 + 5y_3 + y_5 \ge -7 \\
+        \notag & -5y_1 + 6y_2 - 3y_3 + y_6 \ge 6 \\
+        \notag & -4y_1 - 2y_2 - 2y_3 \ge 5 \\
+        \notag & y_1 \ge 0, y_2 \text{ free}, y_3 \le 0, y_4 \ge 0, y_5 \ge 0, y_6 \le 0
+    \end{align}
+    \item  The KKT optimality conditions for each model are as follows: \\
+    (i) Primal feasibility:
+    \begin{align}
+        \notag & x_1 + x_2 + x_3 + x_4 \ge 19 \\
+        \notag & 4x_2 + 8x_4 \le 55 \\
+        \notag & x_1 + 6x_2 - x_3 = 7 \\
+        \notag & x_1 \text{ free}, x_2 \ge 0, x_3 \ge 0, x_4 \le 0
+    \end{align}
+    Complementary slackness conditions:
+    \begin{align}
+        \notag & x_1(y_1 + y_3 - 5) = 0 \\
+        \notag & x_2(y_1 + 4y_2 + 6y_3 - 1) = 0 \\
+        \notag & x_3(y_1 - y_3 + 4) = 0 \\
+        \notag & x_4(y_1 + 8y_2) = 0 \\
+        \notag & y_1(x_1 + x_2 + x_3 + x_4 - 19) = 0 \\
+        \notag & y_2(4x_2 + 8x_4 - 55) = 0 \\
+        \notag & y_3(x_1 + 6x_2 - x_3 - 7) = 0
+    \end{align}
+    (ii) Primal feasibility:
+    \begin{align}
+        \notag & 2x_1 - 3x_2 - 5x_3 - 4x_4 \le 20 \\
+        \notag & 7x_1 + 2x_2 + 6x_3 - 2x_4 = 35 \\
+        \notag & 4x_1 + 5x_2 - 3x_3 - 2x_4 \ge 15 \\
+        \notag & 0 \le x_1 \le 10, 0 \le x_2 \le 5, x_3 \ge 2, x_4 \ge 0
+    \end{align}
+    Complementary slackness conditions:
+    \begin{align}
+        \notag & x_1(2y_1 + 7y_2 + 4y_3 + y_4 - 2) = 0 \\
+        \notag & x_2(-3y_1 + 2y_2 + 5y_3 + y_5 + 7) = 0 \\
+        \notag & x_3(-5y_1 + 6y_2 - 3y_3 + y_6 - 6) = 0 \\
+        \notag & x_4(-4y_1 - 2y_2 - 2y_3 - 5) = 0 \\
+        \notag & y_1(2x_1 - 3x_2 - 5x_3 - 4x_4 - 20) = 0 \\
+        \notag & y_2(7x_1 + 2x_2 + 6x_3 - 2x_4 - 35) = 0 \\
+        \notag & y_3(4x_1 + 5x_2 - 3x_3 - 2x_4 - 15) = 0 \\
+        \notag & y_4(x_1 - 10) = 0 \\
+        \notag & y_5(x_2 - 5) = 0 \\
+        \notag & y_6(x_3 - 2) = 0
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Let the decision variables be $x_1, x_2, x_3$, representing the number of first-class, bussiness-class and coach-fare seats respectively. \\
+    And $n_t^s$ represent the number of t-class tickets sold in s-scenarios, where \\
+    $t = 1$ representing first-class, $t = 2$ representing bussiness-class and $t = 3$ representing coach-fare; $s = 1$ representing scenarios (i), $s = 2$ representing scenarios (ii) and $s = 3$ representing scenarios (iii). \\
+    We let the profit of coach-fare ticket be 1 unit, thus the model is as follows:
+    \begin{align}
+        \notag \max_n \quad & \frac{1}{3} \sum_{s=1}^3 (3n_1^s + 2n_2^s + n_3^s) \\
+        \notag \text{s.t.} \quad & 2x_1 + 1.5x_2 + x_3 \le 200 \\
+        \notag & n_t^s \le x_t \quad \forall s \in \{1, 2, 3\}, t \in \{1, 2, 3\} \\
+        \notag & n_1^1 \le 20, \quad n_2^1 \le 50, \quad n_3^1 \le 200 \\
+        \notag & n_1^2 \le 10, \quad n_2^2 \le 25, \quad n_3^2 \le 175 \\
+        \notag & n_1^3 \le 5, \quad n_2^3 \le 10, \quad n_3^3 \le 150 \\
+        \notag & x_1, x_2, x_3, n_t^s \ge 0 \quad \forall s \in \{1, 2, 3\}, t \in \{1, 2, 3\}
+    \end{align}
+    \item  Optimal partition: $x^*=(10, 20, 150)$ \\
+    Scenario (i): Sell first-class:10, business-class:20, coach-fare:150 \\
+    Scenario (ii): Sell first-class:10, business-class:20, coach-fare:150 \\
+    Scenario (iii): Sell first-class:5, business-class:10, coach-fare:150 \\
+    Optimal profit: 208.33
+    \item  The shadow price of the constraint is $y^*_1 = 0.8889$.
+    \item  The new optimal value $z^* = z^*_{original} + y^*_1 \cdot (201 - 200) = 209.2222$.
+    \item  The linear program's new optimal value is 209.2222, which is consistent with the previous calculated value $z^*$.
+    \item  The shadow prices of the constraints are shown in Table 1:
+    \begin{table}[H]
+        \caption{Shadow prices of the constraints}
+        \centering
+        \begin{tabular}{cccc}
+            \toprule
+            Scenario & first-class & business-class & coach-fare \\
+            \midrule
+            i & 0 & 0 & 0 \\
+            ii & 0.2222 & 0 & 0 \\
+            iii & 1 & 0.6667 & 0.1111 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    For example, in scenario (i), the shadow price of first-class ticket is 0 because the constraint $n_1^1 \le 20$ is not tight at optimality (we only sell 10 first-class tickets), thus increasing the limit of first-class tickets would not increase the overall profit.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  The dual is as follows:
+    \begin{align}
+        \notag \min_y \quad & 12y_1 + 10y_2 + 10y_3 \\
+        \notag \text{s.t.} \quad & 2y_1 + y_2 + 3y_3 \ge 4 \\
+        \notag & 3y_1 + 4y_2 + y_3 \ge 2 \\
+        \notag & y_1 + 2y_2 + y_3 \ge 3 \\
+        \notag & y_1, y_2, y_3, y_4 \ge 0
+    \end{align}
+    \item  The complementary slackness conditions are as follows:
+    \begin{align}
+        \notag & x_1(2y_1 + y_2 + 3y_3 - 4) = 0 \\
+        \notag & x_2(3y_1 + 4y_2 + y_3 - 2) = 0 \\
+        \notag & x_3(y_1 + 2y_2 + y_3 - 3) = 0 \\
+        \notag & y_1(2x_1 + 3x_2 + x_3 - 12) = 0 \\
+        \notag & y_2(x_1 + 4x_2 + 2x_3 - 10) = 0 \\
+        \notag & y_3(3x_1 + x_2 + x_3 - 10) = 0
+    \end{align}
+    Since we have $(x_1^*, x_2^*, x_3^*) = (2, 0, 4)$, we can deduce that
+    \begin{align}
+        \begin{cases}
+            \notag & 2y_1^* + y_2^* + 3y_3^* - 4 = 0 \\
+            \notag & y_1^* + 2y_2^* + y_3^* - 3 = 0 \\
+            \notag & y_1^* = 0
+        \end{cases} \quad \Rightarrow \quad
+        \begin{cases}
+            \notag & y_1^* = 0 \\
+            \notag & y_2^* = 1 \\
+            \notag & y_3^* = 1
+        \end{cases}
+    \end{align}
+    \item  Primal objective value is $4 \times x_1^* + 2 \times x_2^* + 3 \times x_3^* = 20$. \\
+    While dual objective value is $12 \times y_1^* + 10 \times y_2^* + 10 \times y_3^* = 20$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Let the decision variables be $x_{ij}$ representing whether to go the route from hole $i$ to hole $j$, and $d_{ij}$ representing the distance from hole $i$ to hole $j$.
+    The model is as follows:
+    \begin{align}
+        \notag \min_x \quad & \sum_{i=1}^{5} \sum_{j=1}^{5} d_{ij} x_{ij} \\
+        \notag \text{s.t.} \quad & \sum_{j=1}^{5} x_{ij} = 1 \quad \forall i \in \{1, 2, \ldots, 5\} \\
+        \notag & \sum_{i=1}^{5} x_{ij} = 1 \quad \forall j \in \{1, 2, \ldots, 5\} \\
+        \notag & \sum_{i \in S} \sum_{j \in S} x_{ij} \le |S| - 1 \quad \forall S \subseteq \{1, 2, \ldots, 5\}, |S| \le 4 \\
+        \notag & x_{ij} \in \{0, 1\} \quad \forall i, j \in \{1, 2, \ldots, 5\}
+    \end{align}
+    \item  The optimal route is: 1 $\to$ 3 $\to$ 2 $\to$ 4 $\to$ 5 $\to$ 1, with the optimal distance being 35.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Let the decision variables be $x_{i}$ representing whether to choose the course $i$.
+    The model is as follows:
+    \begin{align}
+        \notag \min_x \quad & \sum_{i=1}^{7} x_{i} \\
+        \notag \text{s.t.} \quad & x_1 + x_2 + x_3 + x_4 + x_7 \ge 2 \\
+        \notag & x_2 + x_4 + x_5 + x_7 \ge 2 \\
+        \notag & x_3 + x_5 + x_6 \ge 2 \\
+        \notag & x_3 \le x_6 \\
+        \notag & x_4 \le x_1 \\
+        \notag & x_5 \le x_6 \\
+        \notag & x_7 \le x_4 \\
+        \notag & x_{i} \in \{0, 1\} \quad \forall i \in \{1, 2, \ldots, 7\}
+    \end{align}
+    \item  The optimal courses to choose are course 2, course 3, course 5 and course 6 (Operations Research, Data Structures, Computer Simulation, Intro to Programming), with the optimal number of courses being 4.
+\end{enumerate}
+\end{problem}
+
+\end{document}
