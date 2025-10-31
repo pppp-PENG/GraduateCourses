@@ -303,6 +303,11 @@ INPUT c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/tools/texlive/2025/texmf-dist/fonts/sfd/ttf2pk/UGBK.sfd
 INPUT c:/tools/texlive/2025/texmf-dist/fonts/sfd/ttf2pk/Unicode.sfd
 INPUT c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT ../trainingLoss.png
+INPUT ../trainingLoss.png
+INPUT ../trainingLoss.png
+INPUT ../trainingLoss.png
+INPUT ../trainingLoss.png
 INPUT hw1.aux
 INPUT ./hw1.out
 INPUT ./hw1.out

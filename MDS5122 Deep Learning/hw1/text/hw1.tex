@@ -31,6 +31,7 @@
             & torch==2.6.0 \\
             & torchvision==0.21.0 \\
             & matplotlib==3.10.3 \\
+            & datasets==4.3.0 \\
             & tqdm==4.67.1 \\
             \bottomrule
         \end{tabular}
@@ -47,6 +48,7 @@
             \bottomrule
         \end{tabular}
     \end{table}
+    \newpage
     \item  \textbf{Methods of Accuracy Improvement: }
     \begin{enumerate}[label = (\alph*)]
         \item Residual mechanism: \\
@@ -141,36 +143,42 @@
     \end{enumerate}
     \item \textbf{Classification on Tiny-imagenet Dataset}
     \begin{enumerate}[label = (\alph*)]
-        \item Reuse the Model:
+        \item \textbf{Reuse the Model}:
         Reuse the best model structure from cifar10 experiments, and modify the input size of the first layer to adapt to the 64$\times$64 images of tiny-imagenet dataset.
         \begin{table}[H]
             \caption{Preferance of Model in Cifar-10}
             \centering
-            \begin{tabular}{ccccc}
+            \begin{tabular}{cccccc}
                 \toprule
-                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Train Acc} & \textbf{Test Acc} \\
                 \midrule
-                46.87M & 64 & 16s/epoch & 0.1004 & 38.82\% \\
+                46.87M & 64 & 16s/epoch & 0.1004 & 99.00\% & 38.82\% \\
                 \bottomrule
             \end{tabular}
         \end{table}
-        We can see that the accuracy is 38.82\%, but the loss is extrimely low (0.1004).
+        We can see that the test accuracy is 38.82\%, but the loss is extrimely low (0.1004) and the training accuracy is very high (99.00\%).
         This may be because the model is overfitting.
         So we can try strongly data augmentation and regularization methods to solve this problem.
-        \item More Data Augmentation:
-        Add strongly RandomAffine and ColorJi. \\
+        \item \textbf{More Data Augmentation}:
+        Add strongly RandomAffine and ColorJitter, and make the model more deeper and wider to improve the performance. \\
         And to accelarate the training speed, I modify the batch size to 1000 and number of workers to 8 in dataloader.
+        (Details of the model structure is in the code files.)
         \begin{table}[H]
-            \caption{Preferance of Model in Cifar-10}
+            \caption{Preferance of Improved Model}
             \centering
-            \begin{tabular}{ccccc}
+            \begin{tabular}{cccccc}
                 \toprule
-                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Test Acc} \\
+                \textbf{Param} & \textbf{Epoch} & \textbf{Speed} & \textbf{Loss} & \textbf{Train Acc} & \textbf{Test Acc} \\
                 \midrule
-                50.54M & 128 & 25s/epoch & 2.1935 & 46.40\% \\
+                17.50M & 256 & 19s/epoch & 0.9946 & 76.44\% & 46.40\% \\
                 \bottomrule
             \end{tabular}
         \end{table}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{../trainingLoss.png}
+            \caption{Training Loss}
+        \end{figure}
     \end{enumerate}
     \item \textbf{Thoughts}
     \begin{enumerate}[label = (\alph*)]
@@ -186,10 +194,16 @@
     \item \textbf{Difficulties}
     \begin{enumerate}[label = (\alph*)]
         \item The tiny-imagenet dataset has some \textbf{gray images}, which throw errors when putting them into dataloader. (Gray images have only 1 channel, while others are 3 channels input, which cause dimension mismatch error in dataloader.) \\
-        -- Solution: I write a function to convert gray images to RGB images before loading them into dataloader.
+        --~Solution: I write a function to convert gray images to RGB images before loading them into dataloader.
         \item The model training is too slow when training on tiny-imagenet dataset (64$\times$64). \\
-        -- Solution: I rewrite a new dataset class (myDataset.py), putting the transform operations in the new dataset class instead of huggingface's default dataset class, which can accelarate the data loading speed significantly.
+        --~Solution: I rewrite the dataset class (myDataset.py), putting the transform operations in the new dataset class instead of huggingface's default dataset class, which can accelarate the data loading speed significantly.
     \end{enumerate}
+    \item \textbf{Codes and Model Structures} \\
+    \textbf{hw1\_cifar10.ipynb}: The code of the best model in my experiments for cifar10 experiments. \\
+    \textbf{hw1\_tiny\_imagenet.ipynb}: The code of the best model in my experiments for tiny-imagenet experiments. \\
+    \textbf{myDataset.py}: The dataset class for tiny-imagenet dataset. \\
+    \textbf{note4cifar10.md}: The model structures and their performance for cifar10 experiments. \\
+    \textbf{note4tinyimagenet.md}: The model structures and their performance for tiny-imagenet experiments.
 \end{enumerate}
 
 \end{document}
