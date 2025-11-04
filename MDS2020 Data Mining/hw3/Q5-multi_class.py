@@ -23,15 +23,16 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score, GridSearchCV
 from sklearn.model_selection import StratifiedKFold
+
 # Load data
 iris = load_iris()
-X = iris.data 
-y = iris.target 
-solver_candidates = ['lbfgs',  'liblinear', 'newton-cg']
+X = iris.data
+y = iris.target
+solver_candidates = ["lbfgs", "liblinear", "newton-cg"]
 inner_cv = StratifiedKFold(5, shuffle=True, random_state=1)
 outer_cv = StratifiedKFold(5, shuffle=True, random_state=13)
 
-#%% ++insert your code below++
+# %% ++insert your code below++
 
 """
 The first challenge is  how to define the paramter grids for GridSearchCV with 
@@ -43,3 +44,38 @@ best_clf_ovo = GridSearchCV(basic_clf_ovo, param_grid, cv=inner_cv, scoring="f1_
 best_clf_ovo.fit(X, y)
 
 """
+param_grid = {"estimator__solver": solver_candidates}
+
+basic_clf_ovo = OneVsOneClassifier(LogisticRegression(random_state=0, max_iter=10000))
+grid_ovo = GridSearchCV(basic_clf_ovo, param_grid, cv=inner_cv, scoring="f1_macro")
+grid_ovo.fit(X, y)
+best_clf_ovo = OneVsOneClassifier(
+    LogisticRegression(
+        solver=grid_ovo.best_params_['estimator__solver'], 
+        random_state=0, 
+        max_iter=10000
+    )
+)
+scores_ovo = cross_val_score(best_clf_ovo, X, y, cv=outer_cv, scoring="f1_macro")
+print("OneVsOne average macro-F1: %.4f" % np.mean(scores_ovo))
+print(
+    "OneVsOne best solver (full-data GridSearch):",
+    grid_ovo.best_params_["estimator__solver"],
+)
+
+basic_clf_ovr = OneVsRestClassifier(LogisticRegression(random_state=0, max_iter=10000))
+grid_ovr = GridSearchCV(basic_clf_ovr, param_grid, cv=inner_cv, scoring="f1_macro")
+grid_ovr.fit(X, y)
+best_clf_ovr = OneVsRestClassifier(
+    LogisticRegression(
+        solver=grid_ovr.best_params_['estimator__solver'], 
+        random_state=0, 
+        max_iter=10000
+    )
+)
+scores_ovr = cross_val_score(best_clf_ovr, X, y, cv=outer_cv, scoring="f1_macro")
+print("OneVsRest average macro-F1: %.4f" % np.mean(scores_ovr))
+print(
+    "OneVsRest best solver (full-data GridSearch):",
+    grid_ovr.best_params_["estimator__solver"],
+)

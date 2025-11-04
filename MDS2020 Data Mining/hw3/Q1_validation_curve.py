@@ -27,10 +27,49 @@ from sklearn.model_selection import StratifiedKFold
 
 X, y = load_digits(return_X_y=True)
 gamma_candidates = np.logspace(-6, -1, 5)
-plt.plot(gamma_candidates, [1,2,3,2,1], marker='o')
+plt.plot(gamma_candidates, [1, 2, 3, 2, 1], marker="o")
 plt.show()
 plt.title("Test of Plot Title")
-plt.semilogx(gamma_candidates, [1,2,3,2,1], marker='o')
+plt.semilogx(gamma_candidates, [1, 2, 3, 2, 1], marker="o")
 plt.show()
 
 # %% ++insert your code below++
+stu_id = "225040065"
+k = 10
+cv = StratifiedKFold(n_splits=k, shuffle=True, random_state=0)
+svc = SVC(random_state=0)
+param_name = "gamma"
+param_range = gamma_candidates
+train_scores, test_scores = validation_curve(
+    estimator=svc,
+    X=X,
+    y=y,
+    param_name=param_name,
+    param_range=param_range,
+    scoring="accuracy",
+    cv=cv,
+    n_jobs=-1,
+)
+
+train_mean = np.mean(train_scores, axis=1)
+train_std = np.std(train_scores, axis=1)
+test_mean = np.mean(test_scores, axis=1)
+test_std = np.std(test_scores, axis=1)
+
+plt.figure()
+plt.semilogx(param_range, train_mean, label="Training score", marker="o")
+plt.semilogx(param_range, test_mean, label="Cross-validation score", marker="o")
+plt.fill_between(param_range, train_mean - train_std, train_mean + train_std, alpha=0.2)
+plt.fill_between(param_range, test_mean - test_std, test_mean + test_std, alpha=0.2)
+plt.xlabel(param_name)
+plt.ylabel("Accuracy")
+plt.title(f"Validation Curve based on {k}-fold CV by {stu_id}")
+plt.legend(loc="best")
+plt.grid(True, which="both", ls="--", lw=0.5)
+plt.show()
+
+best_idx = np.argmax(test_mean)
+best_gamma = param_range[best_idx]
+print(
+    f"Best gamma (by mean CV accuracy): {best_gamma} with CV accuracy {test_mean[best_idx]:.4f}"
+)
