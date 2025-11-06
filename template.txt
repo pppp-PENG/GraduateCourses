@@ -2,7 +2,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
 \usepackage[UTF8, scheme = plain]{ctex}
-\usepackage{graphicx, minted, listings}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
 \title{\textbf{Homework 1}}
 \setlength{\droptitle}{-10em}
 \author{PENG Qiheng \\ Student ID\: 225040065}

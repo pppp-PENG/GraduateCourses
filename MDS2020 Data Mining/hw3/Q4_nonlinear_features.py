@@ -85,7 +85,7 @@ h = 0.01  # step size in the mesh
 
 # %% ++modify the code below regarding definition of Logistic Regression as required above++
 # Visualize the results of a default Logistic Regression model trained on orginal 2-d features
-lr_model = LogisticRegression(random_state=0)
+lr_model = LogisticRegression(penalty=None, random_state=0)
 lr_model.fit(X, Y)
 Y_pred = lr_model.predict(X)
 X_err = X[Y != Y_pred]
@@ -144,7 +144,7 @@ def plot_mesh_labels_3d(
 stu_id = "stu_id"
 X3 = np.c_[X, X[:, 0] ** 2]
 
-lr3 = LogisticRegression(random_state=0)
+lr3 = LogisticRegression(penalty=None, random_state=0)
 lr3.fit(X3, Y)
 Y3_pred = lr3.predict(X3)
 X3_err = X[Y != Y3_pred]

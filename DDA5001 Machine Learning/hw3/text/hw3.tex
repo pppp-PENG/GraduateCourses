@@ -1,0 +1,154 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subcaption}
+\usepackage{grffile}
+\title{\textbf{Homework 3}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (a\arabic*)]
+    \item \begin{align} 
+        \notag X = \begin{bmatrix}
+            1 & x_1 & x_1^2 & \cdots & x_1^8 \\
+            1 & x_2 & x_2^2 & \cdots & x_2^8 \\
+            \vdots & \vdots & \vdots & \vdots & \vdots \\
+            1 & x_n & x_n^2 & \cdots & x_n^8
+        \end{bmatrix}, \quad y = \begin{bmatrix}
+            y_1 \\
+            y_2 \\
+            \vdots \\
+            y_n
+        \end{bmatrix}
+    \end{align}
+    \item \begin{align} \notag \hat \theta = \left [ \begin{matrix}
+        0.60775979 \\
+        -7.25862115 \\
+        15.3450059 \\
+        17.26526602 \\
+        -46.39728808 \\
+        -10.63103168 \\
+        41.47282583 \\
+        1.75929095 \\
+        -11.22913232
+    \end{matrix} \right ] \end{align}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{../code_release/p1/a2.png}
+        \caption{Ridge regression with different $\lambda$}
+    \end{figure}
+    \item \begin{align} \notag {||\bf{X}_{test} \hat \theta - \bf{y}_{test}||}_2 = 4.5607 \end{align}
+\end{enumerate}
+\begin{enumerate}[label = (b\arabic*)]
+    \item The figure is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{../code_release/p1/b1.png}
+        \caption{Lasso regression with different $\lambda$}
+    \end{figure}
+    \item The figures are as follows:
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p1/b2-0.01.png}
+            \caption{$\lambda$ = 0.01}
+        \end{subfigure}\hfill
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p1/b2-0.1.png}
+            \caption{$\lambda$ = 0.1}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p1/b2-0.8.png}
+            \caption{$\lambda$ = 0.8}
+        \end{subfigure}\hfill
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p1/b2-5.0.png}
+            \caption{$\lambda$ = 5}
+        \end{subfigure}
+        \caption{Lasso regression coefficients with different $\lambda$}
+    \end{figure}
+    \item \begin{align}
+        \notag \lambda = 0.01, \quad \text{test error} = 0.6634 \\
+        \notag \lambda = 0.1, \quad \text{test error} = 0.6341 \\
+        \notag \lambda = 0.8, \quad \text{test error} = 0.6493 \\
+        \notag \lambda = 5, \quad \text{test error} = 0.8207
+    \end{align}
+\end{enumerate}
+\end{problem}
+
+% duplicate figure fragment removed
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\arabic*)]
+    \item  The top 40 eigenfaces are as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../code_release/p2/1.png}
+        \caption{Top 40 eigenfaces}
+    \end{figure}
+    \item  The figure is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../code_release/p2/2.png}
+        \caption{Corresponding reconstructed images with k}
+    \end{figure}
+    As k increases, the reconstruction details significantly increase (facial contours and expression details gradually recover), and if k is too small, important structures will be lost and blurred; Excessive k can restore noise and individual differences, tending towards overfitting the training set.
+    \item  The figure is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../code_release/p2/3.png}
+        \caption{SNR under different choices of k}
+    \end{figure}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  The figures are as follows:
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p3/plots/poly_deg1_valerr_vs_C.png}
+            \caption{Polynomial degree = 1}
+        \end{subfigure}\hfill
+        \begin{subfigure}[b]{0.48\linewidth}
+            \centering
+            \includegraphics[width=\linewidth]{../code_release/p3/plots/poly_deg2_valerr_vs_C.png}
+            \caption{Polynomial degree = 2}
+        \end{subfigure}
+        \caption{Validation error vs C for different polynomial degrees}
+    \end{figure}
+    poly\_deg1 best C = 46.4159, val\_err = 0.094 \\
+    poly\_deg1 test error (retrained on whole training set) = 0.0441 \\
+    poly\_deg2 best C = 10, val\_err = 0.092 \\
+    poly\_deg2 test error (retrained on whole training set) = 0.0355
+    \item  The figure is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../code_release/p3/plots/rbf_valerr_vs_C_per_gamma.png}
+        \caption{Validation error vs gamma and C for RBF kernel}
+    \end{figure}
+    RBF best gamma=0.01, best C=10 \\
+    RBF test error (retrained on whole training set) = 0.0005
+\end{enumerate}
+\end{problem}
+
+\end{document}
