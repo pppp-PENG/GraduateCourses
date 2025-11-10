@@ -9,7 +9,7 @@ import torch
 import tiktoken
 from model import GPTConfig, GPT
 
-student_id = 123456 # change to your student id
+student_id = 225040065 # change to your student id
 # -----------------------------------------------------------------------------
 init_from = 'resume' # either 'resume' (from an out_dir) or a gpt2 variant (e.g. 'gpt2-xl')
 out_dir = 'out' # ignored if init_from is not 'resume'
