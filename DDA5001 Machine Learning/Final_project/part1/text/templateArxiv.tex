@@ -23,7 +23,7 @@
 \rhead{ \textit{ }} 
 
 % Update your Headers here
-\fancyhead[LO]{Running Title for Header}
+% \fancyhead[LO]{Running Title for Header}
 % \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
 
 
@@ -33,8 +33,8 @@
 \title{DDA5001 Project Part I:\@ Pre-training a GPT Model on Shakespeare Dataset
 %%%% Cite as
 %%%% Update your official citation here when published 
-\thanks{\textit{\underline{Citation}}: 
-\textbf{Authors. Title. Pages\ldots DOI:000000/11111.}} 
+% \thanks{\textit{\underline{Citation}}: 
+% \textbf{Authors. Title. Pages\ldots DOI:000000/11111.}} 
 }
 
 \author{
@@ -83,80 +83,40 @@
 The the training loss and validation loss are shown in Figure 1.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png}
+  \includegraphics[width=0.5\linewidth]{../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png}
   \caption{Training and Validation Loss}
 \end{figure}
 
+\section{Difficulties and Observations}
+Difficulties: \\
+(a) Dependency conflict issue while running pip install. \\
+---- Solution: Install the corresponding pytorch and other packages based on my CUDA version. \\
 
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
-\lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
+Observations: \\
+(a) The training loss is lower than the validation loss after 1000 iterations, which may indicate slight overfitting. \\
+(b) The generated text is still quite noisy, which may be due to the small size of the Shakespeare dataset.
 
-The documentation for \verb+natbib+ may be found at
-\begin{center}
-  \url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-Of note is the command \verb+\citet+, which produces citations
-appropriate for use in inline text.  For example,
-\begin{verbatim}
-   \citet{hasselmo} investigated\dots
-\end{verbatim}
-produces
-\begin{quote}
-  Hasselmo, et al.\ (1995) investigated\dots
-\end{quote}
+\newpage
+\section{Appendix}
+\subsection{Generated Text (One Sample)}
+Were all the with well him woman be distill: \\
+Wherink when sing feel'd with the pity \\
+To that which he watter in the with strewar. \\
 
-\begin{center}
-  \url{https://www.ctan.org/pkg/booktabs}
-\end{center}
+Second Servingman: \\
+He in here sone! which or are he ward there a given we hate follower of the mon \\
+a cred to-dear, whom of my cannot their: speak be somession; and a game by the sin \\
+The seast just that theer-gent. \\
 
+CORIOLANUS: \\
+Tell me. \\
+If not all man: \\
+I did the kill stander therefore the is long: \\
+And away tearshife good him him. \\
 
-\subsection{Figures}
-\lipsum[10] 
-See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
-\lipsum[11] 
+SLY: \\
+'Tis dready and deman, the that a
 
-\begin{figure}
-  \centering
-  \fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-  \caption{Sample figure caption.}
-  \label{fig:fig1}
-\end{figure}
-
-\subsection{Tables}
-\lipsum[12]
-See awesome Table~\ref{tab:table}.
-
-\begin{table}
- \caption{Sample table title}
-  \centering
-  \begin{tabular}{lll}
-    \toprule
-    \multicolumn{2}{c}{Part}                   \\
-    \cmidrule(r){1-2}
-    Name     & Description     & Size ($\mu$m) \\
-    \midrule
-    Dendrite & Input terminal  & $\sim$100     \\
-    Axon     & Output terminal & $\sim$10      \\
-    Soma     & Cell body       & up to $10^6$  \\
-    \bottomrule
-  \end{tabular}
-  \label{tab:table}
-\end{table}
-
-\subsection{Lists}
-\begin{itemize}
-\item Lorem ipsum dolor sit amet
-\item consectetur adipiscing elit. 
-\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
-\end{itemize}
-
-
-\section{Conclusion}
-Your conclusion here
-
-\section*{Acknowledgments}
-This was was supported in part by......
 
 %Bibliography
 \bibliographystyle{unsrt}  

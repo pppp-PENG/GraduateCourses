@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  10 NOV 2025 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  11 NOV 2025 15:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -410,20 +410,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/tools/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-<../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png, id=28, 462.528pt x 346.896pt>
+<../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png, id=20, 462.528pt x 346.896pt>
 File: ../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png Graphic file (type png)
 <use ../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png>
 Package pdftex.def Info: ../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png  used on input line 86.
-(pdftex.def)             Requested size: 375.80542pt x 281.86818pt.
+(pdftex.def)             Requested size: 234.87749pt x 176.15768pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
-LaTeX Warning: Citation `kour2014real' on page 1 undefined on input line 93.
-
-
-LaTeX Warning: Citation `kour2014fast' on page 1 undefined on input line 93.
-
-
-LaTeX Warning: Citation `hadash2018estimate' on page 1 undefined on input line 93.
+ []
 
 
 
@@ -434,56 +429,46 @@ LaTeX Warning: Citation `hadash2018estimate' on page 1 undefined on input line 9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.94 
-      <../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png>]
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 149.
- (c:/tools/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
+l.99 \newpage
+              <../../DDA5001-25Fall-main/p1/src/out-shakespeare-char/loss_curves.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
 
-[2
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.158 \section
-              *{Acknowledgments}{c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--116
+
+ []
+
 No file templateArxiv.bbl.
 
 
-[3
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.166 \end{document}
-                    ] (./templateArxiv.aux)
+[2] (./templateArxiv.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `templateArxiv.out' has not changed.
-(rerunfilecheck)             Checksum: B1A31183FEEC548D656B163CA240FC5D;735.
+(rerunfilecheck)             Checksum: 38D94D3DB67A19D13D05CFAA5A224AAE;557.
  ) 
 Here is how much of TeX's memory you used:
- 12531 strings out of 467800
- 202704 string characters out of 5432935
- 730126 words of memory out of 5000000
- 40857 multiletter control sequences out of 15000+600000
- 673657 words of font info for 167 fonts, out of 8000000 for 9000
+ 12315 strings out of 467800
+ 199794 string characters out of 5432935
+ 723425 words of memory out of 5000000
+ 40750 multiletter control sequences out of 15000+600000
+ 649854 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1087b,463s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on templateArxiv.pdf (3 pages, 140133 bytes).
+ 75i,11n,79p,1087b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/tools/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on templateArxiv.pdf (2 pages, 59236 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 51254 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 51 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 26150 words of extra memory for PDF output out of 29859 (max. 10000000)
 

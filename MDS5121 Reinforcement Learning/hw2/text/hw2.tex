@@ -1,0 +1,73 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}
+    \item \begin{align}
+        \notag \text{state space} \quad & \mathcal{S} = \{0, 1, \ldots, n\} \\
+        \notag \text{action space} \quad & \mathcal{A} = \{'c', 'r'\} \\
+        \notag \text{transition function} \quad & P(s'|s, a) = \begin{cases}
+            \frac{n-i}{n}, & a = 'c', s' = s + 1 \\
+            \frac{i}{n}, & a = 'c', s' = s - 1 \\
+            \frac{1}{n}, & a = 'r', \forall s' \in \mathcal{S} \\
+            0, & \text{otherwise}
+        \end{cases} \\
+        \notag \text{reward function} \quad & R(s, a, s') = \begin{cases}
+            1, & s' = n \\
+            0, & \text{otherwise}
+        \end{cases} \\
+        \notag \text{optimal value function} \quad & V^*(s) = \\
+        \notag \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} & P(s'|s, a) \left( R(s, a, s') + \gamma V^*(s') \right)
+    \end{align}
+    \item  ***
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+    \begin{align}
+        \notag V^* = R + \gamma P V^* \\
+        \notag (I - \gamma P) V^* = R \\
+        \notag V^* = {(I - \gamma P)}^{-1} R = \hat V = \Phi w \\
+        \notag R = (I - \gamma P) \Phi w
+    \end{align}
+    So we need $\Phi$ to satisfy the following equation:
+    \begin{align}
+        \notag R = (I - \gamma P) \Phi w
+    \end{align}
+    Thus we can guarantees that $V^* = \Phi w$.
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}
+    \item  ***
+    \item  ***
+    \item  ***
+    \item  ***
+\end{enumerate}
+\end{problem}
+
+
+\newpage
+\begin{problem}
+    ***
+\end{problem}
+
+\end{document}
