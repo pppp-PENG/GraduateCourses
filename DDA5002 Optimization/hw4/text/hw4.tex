@@ -19,14 +19,27 @@
 
 \begin{problem}
 \begin{enumerate}[label = (\alph*)]
-    \item \begin{align} \notag *** \end{align}
+    \item  The solving process is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{../code/p1_pic.jpg}
+        \caption{Solving process for (a)}
+    \end{figure}
+    \item  Yes, 
+    but one condition needs to be met: 
+    the objective function coefficients are all integers. 
+    Because if the coefficients of the objective function are all integers, 
+    then the objective value of any integer solution must also be an integer, 
+    so the optimal integer solution z must also be an integer. \\
+    In this question, the objective function coefficients are 2, 3, 4, and 7, 
+    all of which are integers, so this condition is satisfied.
 \end{enumerate}
 \end{problem}
 
 \newpage
 \begin{problem}
 \begin{enumerate}[label = (\alph*)]
-    \item  \begin{align}
+    \item  \begin{gather}
         \notag \nabla f(x) = \begin{bmatrix}
             4x_1^3 + 6x_1^2 - 4x_1 x_2 \\
             -2x_1^2 + 8x_2
@@ -51,8 +64,19 @@
             20 & 8 \\
             8 & 8
         \end{bmatrix} \text{(PD)}
-    \end{align}
+    \end{gather}
     Thus, $(0, 0)$ is a saddle point, while $(-2,1)$ is a local minimum.
+    \item The contour plot is as follows:
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{../code/p2.png}
+        \caption{Contour plot of $f(x)$}
+    \end{figure}
+    From the contour map, 
+    it can be seen that the function presents a concave shape near the point $(-2, 1)$
+    and is the only local minimum point. \\
+    When $x_1 \rightarrow \infty or x_2 \rightarrow \infty$, $f(x) \rightarrow +\infty$,
+    so there is a global minimum at $(-2, 1)$.
 \end{enumerate}
 \end{problem}
 

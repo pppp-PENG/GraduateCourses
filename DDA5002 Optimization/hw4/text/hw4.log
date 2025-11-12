@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  12 NOV 2025 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  12 NOV 2025 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -817,22 +817,34 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18.
  (c:/tools/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
+<../code/p1_pic.jpg, id=4, 1116.67188pt x 620.81938pt>
+File: ../code/p1_pic.jpg Graphic file (type jpg)
+<use ../code/p1_pic.jpg>
+Package pdftex.def Info: ../code/p1_pic.jpg  used on input line 25.
+(pdftex.def)             Requested size: 312.00119pt x 173.4588pt.
+
 
 (c:/tools/texlive/2025/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
 File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfTeX and DVIPDFMx (CTEX)
 {c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
-{c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+{c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <../code/p1_pic.jpg>]
+<../code/p2.png, id=15, 578.16pt x 433.62pt>
+File: ../code/p2.png Graphic file (type png)
+<use ../code/p2.png>
+Package pdftex.def Info: ../code/p2.png  used on input line 72.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 62--68
+
+[2 <../code/p2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 86--92
 
  []
 
 
 
 [3]
-runsystem(latexminted cleantemp  --timestamp 20251112124751 A7E9CDB33348AF094E145D819DAC660D)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20251112150504 A7E9CDB33348AF094E145D819DAC660D)...executed safely (allowed).
 
  (./hw4.aux)
  ***********
@@ -843,18 +855,18 @@ Package rerunfilecheck Info: File `hw4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19571 strings out of 467800
- 367860 string characters out of 5432935
- 879884 words of memory out of 5000000
- 47885 multiletter control sequences out of 15000+600000
+ 19592 strings out of 467800
+ 368246 string characters out of 5432935
+ 881884 words of memory out of 5000000
+ 47902 multiletter control sequences out of 15000+600000
  646836 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,14n,83p,795b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on hw4.pdf (3 pages, 91654 bytes).
+Output written on hw4.pdf (3 pages, 429134 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 75 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

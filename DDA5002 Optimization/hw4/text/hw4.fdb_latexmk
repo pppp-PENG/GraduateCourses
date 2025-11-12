@@ -1,5 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1762922870.70915 "d:/codes/GraduateCourses/DDA5002 Optimization/hw4/text/hw4.tex" "hw4.pdf" "hw4" 1762922873.64937 0
+["pdflatex"] 1762931104.00185 "d:/codes/GraduateCourses/DDA5002 Optimization/hw4/text/hw4.tex" "hw4.pdf" "hw4" 1762931106.85555 0
+  "../code/p1_pic.jpg" 1762931102 184101 4231a03e0a9fab5159625d4419f8b4d3 ""
+  "../code/p2.png" 1762925543 202344 936c6a2196d6069f66caa2354b6d5adb ""
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1757555838 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1757557535 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -156,10 +158,10 @@
   "c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1757601827 5574057 72d12c42828dd29cd2b63e4ce1dfbbfc ""
   "c:/tools/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1757602350 3605778 d277370de469639aac81249403a28ef0 ""
   "c:/tools/texlive/2025/texmf.cnf" 1757601790 713 e69b156964470283e0530f5060668171 ""
-  "d:/codes/GraduateCourses/DDA5002 Optimization/hw4/text/hw4.tex" 1762922869 2819 c17ffbe31ea2ea36339a38d3f0a1b33d ""
-  "hw4.aux" 1762922873 229 dd3c6ef37a68515e33629276f7d50a7b "pdflatex"
-  "hw4.out" 1762922871 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "hw4.tex" 1762922869 2819 c17ffbe31ea2ea36339a38d3f0a1b33d ""
+  "d:/codes/GraduateCourses/DDA5002 Optimization/hw4/text/hw4.tex" 1762931003 3987 a29bd189cff22a3fdaa8845abffcbdfd ""
+  "hw4.aux" 1762931106 496 60efea223f357416ca881f7ac1b57479 "pdflatex"
+  "hw4.out" 1762931104 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "hw4.tex" 1762931003 3987 a29bd189cff22a3fdaa8845abffcbdfd ""
   (generated)
   "hw4.aux"
   "hw4.log"
