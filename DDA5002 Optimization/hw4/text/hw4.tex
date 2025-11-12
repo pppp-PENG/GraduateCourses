@@ -1,0 +1,85 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item \begin{align} \notag *** \end{align}
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  \begin{align}
+        \notag \nabla f(x) = \begin{bmatrix}
+            4x_1^3 + 6x_1^2 - 4x_1 x_2 \\
+            -2x_1^2 + 8x_2
+        \end{bmatrix} \\
+        \notag \text{Let } \nabla f(x) = \mathbf{0} \quad
+        \Rightarrow \begin{cases}
+            x_1 = 0 \\
+            x_2 = 0
+        \end{cases} \text{or } \begin{cases}
+            x_1 = -2 \\
+            x_2 = 1
+        \end{cases} \\
+        \notag \text{While } \nabla^2 f(x) = \begin{bmatrix}
+            12x_1^2 + 12x_1 - 4x_2 & -4x_1 \\
+            -4x_1 & 8
+        \end{bmatrix} \\
+        \notag \nabla^2 f(0,0) = \begin{bmatrix}
+            0 & 0 \\
+            0 & 8
+        \end{bmatrix} , \quad \nabla^2
+        f(-2,1) = \begin{bmatrix}
+            20 & 8 \\
+            8 & 8
+        \end{bmatrix} \text{(PD)}
+    \end{align}
+    Thus, $(0, 0)$ is a saddle point, while $(-2,1)$ is a local minimum.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\begin{enumerate}[label = (\alph*)]
+    \item  Using the Leading Principle Minors method: \\
+    $A_1$ is indefinite; \\
+    $A_2$ is positive semidefinite; \\
+    $A_3$ is positive definite; \\
+    $A_4$ is indefinite. \\
+    Calculating the eigenvalues of $A_3$ and $A_4$: \\
+    \begin{gather}
+        \notag |A_3 - \lambda I| = \begin{vmatrix}
+            1 - \lambda & 0 & 1 \\
+            0 & 1 - \lambda & -1 \\
+            0 & 2 & 4 - \lambda
+        \end{vmatrix} = (1 - \lambda)(2 - \lambda)(3 - \lambda) = 0 \\
+        \notag \Rightarrow \lambda_1 = 1, \lambda_2 = 2, \lambda_3 = 3 \\
+        \notag |A_4 - \lambda I| = \begin{vmatrix}
+            1 - \lambda & 0 & 1 \\
+            0 & -1 - \lambda & -1 \\
+            -1 & 1 & - \lambda \\
+        \end{vmatrix} = - \lambda(\lambda^2 + 1) = 0 \\
+        \notag \Rightarrow \lambda_1 = 0, \lambda_2 = i, \lambda_3 = -i
+    \end{gather}
+\end{enumerate}
+\end{problem}
+
+\end{document}
