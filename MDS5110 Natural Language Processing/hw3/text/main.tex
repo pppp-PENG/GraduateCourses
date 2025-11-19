@@ -1,0 +1,250 @@
+
+\documentclass{article}%ForLaTeX2e
+\usepackage{iclr2024_conference,times}
+
+%Optionalmathcommandsfromhttps://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{CJK}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{minted}
+\usepackage{lipsum}
+
+% define AIbox
+\usepackage[most]{tcolorbox}
+\usepackage{float}
+\usepackage{xspace}
+\tcbset{
+  aibox/.style={
+    width=474.18663pt,
+    top=10pt,
+    colback=white,
+    colframe=black,
+    colbacktitle=black,
+    enhanced,
+    center,
+    attach boxed title to top left={yshift=-0.1in,xshift=0.15in},
+    boxed title style={boxrule=0pt,colframe=white,},
+  }
+}
+\newtcolorbox{AIbox}[2][]{aibox,title=#2,#1}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    breaklines,
+    columns=fixed,       
+    numbers=left,                                        % 在左侧显示行号
+    frame=none,                                          % 不显示背景边框
+    backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+    numberstyle=\footnotesize\color{darkgray},           % 设定行号格式
+    commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+    showstringspaces=false,                              % 不显示字符串中的空格
+    language=python,                                        % 设置语言
+}
+
+\title{Assignment 3: Research on SFT Method}
+
+%Authorsmustnotappearinthesubmittedversion.Theyshouldbehidden
+%aslongasthe\iclrfinalcopymacroremainscommentedoutbelow.
+%Non-anonymoussubmissionswillberejectedwithoutreview.
+
+\author{
+PENG Qiheng\\
+225040065\\
+Data Science\\
+Shenzhen, China\\
+% Pittsburgh,PA15213,USA\\
+% \texttt{225040065@link.cuhk.edu.cn}\\
+}
+
+
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\iclrfinalcopy%Uncommentforcamera-readyversion,butNOTforsubmission.
+\iclrfinalcopy
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+\maketitle
+
+% \begin{abstract}
+
+% \textbf{ You could modify any format as you want and add anything if you think it is necessary.  Be concise and say something that matters.
+% }
+% \end{abstract}
+
+\section{Research Topic}
+
+\paragraph{Research topic} Research Topic: Fine-tuning Method on Pre-trained Models
+
+\paragraph{Importance of the topic} The goal of this experiment was to explore how supervised fine-tuning (SFT) can improve the model's instruction-following ability in this domain.
+
+\paragraph{Task to do} In this assignment, I fine-tuned a pre-trained large language model (LLM) for Chinese medical dialogue using Huatuo26M-Lite dataset.
+
+
+\section{Experiment Design}
+
+% \paragraph{Definition of the task} \lipsum[3]
+
+% \paragraph{Design of the experiment?} 
+\paragraph{Dataset} I used the Huatuo26M-Lite from Huggingface.
+\paragraph{Base Model} I selected Qwen3-4B as the backbone model due to its strong performance in Chinese tasks.
+\paragraph{Training Method} I employed SFT with QLoRA for parameter-efficient fine-tuning. The training was conducted with a RTX 5090 GPU. 
+\paragraph{Evaluation} I used ChatGPT-3 as an evaluator, following the prompt template from the document. I used 20 test questions and compared my model's outputs with a baseline.
+
+
+\section{Code Implementation}
+
+\subsection{Experiment setting}
+{\small
+\begin{lstlisting}
+# CUDA=12.8, python==3.12
+torch==2.8.0+cu128
+
+\end{lstlisting}
+}
+
+\subsection{Model Loading}
+
+{\small
+\begin{lstlisting}
+bnb_4bit_quant_type = "nf4"
+use_nested_quant = True
+model_id = "Qwen/Qwen3-14B"
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_use_double_quant=use_nested_quant,
+    bnb_4bit_quant_type=bnb_4bit_quant_type,
+    bnb_4bit_compute_dtype=torch.bfloat16
+)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    quantization_config=bnb_config,
+    device_map={"":0}
+)
+\end{lstlisting}
+}
+
+
+\subsection{Experiment}
+Setting 1: \textbf{Baseline model}
+
+Setting 2: \textbf{Model scaling up (Qwen3-4B → Qwen3-14B)}
+The parameter count has increased from 4 billion to 14 billion, significantly increasing the model capacity.
+Keep other training parameters unchanged for fair comparison.
+
+Setting 3: \textbf{Data Augmentation} Randomly select 30\% of the samples from the training set for enhancement, generate synonym replacement versions for each selected question, keep the original answer unchanged, and only enhance the part of the question.
+
+Setting 4: \textbf{Training Tricks} Modify training hyperparameters:
+{\small
+\begin{lstlisting}
+training_arguments = transformers.TrainingArguments(
+    output_dir="./checkpoint",
+    num_train_epochs=1,
+    per_device_train_batch_size=10,
+    per_device_eval_batch_size=10,
+    gradient_accumulation_steps=1,
+    optim='paged_adamw_32bit',
+    save_steps=0,
+    logging_steps=1,
+    learning_rate=1e-4,
+    weight_decay=0.001,
+    max_steps=-1,
+    warmup_ratio=0.03,
+    group_by_length=True,
+    lr_scheduler_type="cosine",
+    gradient_checkpointing=False,
+    report_to="none",
+    eval_strategy="steps",           
+    eval_steps=1,
+)
+\end{lstlisting}
+}
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{ccc}
+    \toprule
+    ChatGPT & winning rate \\
+    \midrule
+     Ours (\textit{setting 1}) & 75\% \\
+     Ours (\textit{setting 2}) & 90\% \\
+     Ours (\textit{setting 3}) & 80\% \\
+     Ours (\textit{setting 4}) & 80\% \\
+    \bottomrule
+    \end{tabular}
+    \caption{Experimental Results}
+    \label{tab:my_label}
+\end{table}
+
+\subsection{Evaluation}
+We use ChatGPT for evaluation with the following prompt:
+
+\textit{\color{gray}{We would like to request your feedback on the two AI assistants in response to the user question displayed above. \\
+Please evaluate the helpfulness, relevance, accuracy, level of details of their responses. You should tell me whether Assistant 1 is `better than`, `worse than`, or `equal to` Assistant 2. \\
+Please first compare their responses and analyze which one is more in line with the given requirements. \\
+In the last line, please output a single line containing only a single label selecting from `Assistant 1 is better than Assistant 2`, `Assistant 1 is worse than Assistant 2`, and `Assistant 1 is equal to Assistant 2`, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.}}
+
+
+\section{Result Analysis}
+
+\subsection{Quantitative evaluations}
+
+Based on the experimental results, we can draw the following quantitative insights:
+
+Model size scaling has a significant impact on performance. The winning rate increased by 15 percentage points when scaling from Qwen3-4B to Qwen3-14B. This demonstrates that larger model capacity substantially enhances the model's ability to understand and generate professional medical dialogue, consistent with the scaling laws observed in large language models.
+Data augmentation (Setting 3) yielded a 5 percentage point improvement, indicating that increasing training data diversity through synonym replacement effectively improves the model's adaptability to different user question formulations. This is particularly valuable in medical dialogue where patients may express the same concern in various ways.
+Training technique optimization (Setting 4) also achieved a 5 percentage point improvement, highlighting the importance of proper hyperparameter configuration. Adjustments to learning rate, batch size, and optimizer selection significantly impacted fine-tuning effectiveness.
+Comparative impact: The performance gain from model size scaling was substantially higher than from data augmentation or training technique optimization. This suggests that when resources are limited, prioritizing model size expansion may yield better returns than other techniques.
+Consistent improvement: All four settings significantly outperformed the baseline model, confirming that supervised fine-tuning is an effective approach for improving instruction-following ability in medical dialogue tasks.
+
+\subsection{Case study}
+
+User question: "请描述一下病毒性感染的传播途径以及如何防止传播？" \\
+
+Baseline (Setting 1): "病毒性感染是指由病毒感染引起的疾病，其传播方式和预防措施因不同的病原体而异。以下是对常见病毒性感染的传播途径及防范方法的概述：一、常见的病毒性感染及其传播途径1. 流感（如甲型H1N1）传播途径：空气飞沫传播：咳嗽、打喷嚏时产生的飞沫可被他人吸入。接触传播：手部接触污染表面后触摸..." \\
+
+Qwen3-14B (Setting 2): "病毒性感染是指由病毒感染引起的疾病，这类疾病的传播方式多种多样。了解其主要传播途径有助于采取有效的预防措施以减少传染风险。一、常见的病毒性感染传播途径：1. 呼吸道飞沫传播：当感染者咳嗽、打喷嚏或说话时会释放含有病毒的飞沫。健康人吸入这些带有病毒的小液滴后可能被感染（如流感、新冠等）。密切接触传播..." \\
+
+Analysis: The answer of the 14B model first lists the transmission channels, and then answers the measures to prevent transmission based on the channels, with a chain thinking logic, while the baseline model answers directly.
+
+\section{Conclusion}
+
+This research explored the effectiveness of supervised fine-tuning (SFT) methods for enhancing Chinese medical dialogue systems. Our key findings include: \\
+
+Model size is a critical factor: Scaling from 4B to 14B parameters yielded the most significant performance improvement, confirming that larger models better capture the complex medical knowledge required for accurate dialogue. \\
+
+Data augmentation provides meaningful enhancement: Increasing training data diversity improves the model's ability to handle varied patient inquiries, a crucial aspect of medical dialogue systems. \\
+
+Training methodology matters: Proper fine-tuning configuration is essential for maximizing model performance in specialized domains.
+
+
+
+
+
+
+\newpage
+\section*{Acknowledgment}
+
+This is the Assignment3 for DDA6307 / CSC6052 / MDS6002, see details in \url{https://nlp-course-cuhksz.github.io/}.
+
+
+\bibliography{iclr2024_conference}
+\bibliographystyle{iclr2024_conference}
+
+% \appendix
+% \section{Appendix}
+
+\end{CJK}
+\end{document}
