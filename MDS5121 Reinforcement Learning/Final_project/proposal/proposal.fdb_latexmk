@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1762521982.9137 "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal/proposal.tex" "proposal.pdf" "proposal" 1762521985.4086 0
+["pdflatex"] 1763269652.64888 "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal/proposal.tex" "proposal.pdf" "proposal" 1763269657.6214 0
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1757555838 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/tools/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1757557535 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -138,9 +138,9 @@
   "c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1757601827 5574057 72d12c42828dd29cd2b63e4ce1dfbbfc ""
   "c:/tools/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1757602350 3605778 d277370de469639aac81249403a28ef0 ""
   "c:/tools/texlive/2025/texmf.cnf" 1757601790 713 e69b156964470283e0530f5060668171 ""
-  "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal/proposal.tex" 1762521982 2045 d998a79c036b4862134dd220d53f99fc ""
-  "proposal.aux" 1762521985 576 e312f55234eea26fe9cd2ab333343a4e "pdflatex"
-  "proposal.out" 1762521985 421 d0020d35dc8f4bb5b45b241f4432f058 "pdflatex"
+  "d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal/proposal.tex" 1762521982 2045 d998a79c036b4862134dd220d53f99fc ""
+  "proposal.aux" 1763269657 576 e312f55234eea26fe9cd2ab333343a4e "pdflatex"
+  "proposal.out" 1763269657 421 d0020d35dc8f4bb5b45b241f4432f058 "pdflatex"
   "proposal.tex" 1762521982 2045 d998a79c036b4862134dd220d53f99fc ""
   (generated)
   "proposal.aux"

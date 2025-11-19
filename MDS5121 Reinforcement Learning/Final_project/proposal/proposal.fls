@@ -1,8 +1,8 @@
-PWD d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal
+PWD d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal
 INPUT c:/tools/texlive/2025/texmf.cnf
 INPUT c:/tools/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/tools/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal/proposal.tex
+INPUT d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal/proposal.tex
 OUTPUT proposal.log
 INPUT c:/tools/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/tools/texlive/2025/texmf-dist/tex/latex/base/article.cls

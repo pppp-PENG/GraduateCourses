@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  7 NOV 2025 21:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.11)  16 NOV 2025 13:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal/proposal.tex"
-(d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/final_project/proposal/proposal.tex
+**"d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal/proposal.tex"
+(d:/codes/GraduateCourses/MDS5121 Reinforcement Learning/Final_project/proposal/proposal.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
 (c:/tools/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -826,7 +826,7 @@ File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfT
 {c:/tools/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
 
 {c:/tools/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-runsystem(latexminted cleantemp  --timestamp 20251107212623 B314439BC1697845DE3749D51DCA7C15)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20251116130733 B314439BC1697845DE3749D51DCA7C15)...executed safely (allowed).
 
  (./proposal.aux)
  ***********
@@ -839,13 +839,13 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 Here is how much of TeX's memory you used:
  19508 strings out of 467800
  367048 string characters out of 5432935
- 879950 words of memory out of 5000000
+ 879951 words of memory out of 5000000
  47836 multiletter control sequences out of 15000+600000
  639245 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  80i,6n,83p,824b,504s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/tools/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/tools/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on proposal.pdf (1 page, 42993 bytes).
+Output written on proposal.pdf (1 page, 42824 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
