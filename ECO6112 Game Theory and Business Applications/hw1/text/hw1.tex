@@ -1,0 +1,183 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{bookmark}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-10em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+List all strategies in the extensive-form game.
+\begin{solution}
+A pure strategy specifies an action at every information set of a player,
+including information sets that are not reached in play.
+
+Player 1 has one decision node, with actions $A$, $B$, and $C$. Thus,
+\[
+    \boxed{S_1=\{A,B,C\}.}
+\]
+Player 2 has two information sets: the node following $A$, and the
+information set joining the nodes following $B$ and $C$. The dashed line
+means that player 2 cannot distinguish $B$ from $C$, so the prescribed
+action must be the same at these two nodes.
+
+Write a strategy of player 2 as $(x_A,x_{BC})$, where the first component
+is the action after $A$ and the second is the action at the shared
+information set after $B$ or $C$. Then
+\[
+    \boxed{S_2=\{(a,a),(a,b),(b,a),(b,b)\}.}
+\]
+Hence player 1 has $3$ pure strategies and player 2 has $2\times2=4$.
+If mixed strategies are included, their strategy spaces are
+$\Delta(S_1)$ and $\Delta(S_2)$, respectively, where $\Delta(S)$ denotes
+all probability distributions over $S$.
+\end{solution}
+\end{problem}
+
+\newpage
+\begin{problem}
+Best responses.
+\begin{enumerate}[label = (\alph*)]
+    \item Against $D$, the payoffs from $A,B,C$ are $1,1,0$.\par
+    Thus $\boxed{\operatorname{BR}_1(D)=\{A,B\}}$.
+    Every mixture of $A$ and $B$ is also optimal.
+
+    \item Let $r=\Pr(D)\in[0,1]$. Player 1's expected payoffs are
+    \[
+        u_1(A;r)=r,\qquad u_1(B;r)=2-r,\qquad u_1(C;r)=2-2r.
+    \]
+    Since $u_1(B;r)-u_1(A;r)=2(1-r)$ and $u_1(B;r)-u_1(C;r)=r$,
+    \[
+    \boxed{
+    \operatorname{BR}_1(r)=
+    \begin{cases}
+        \{B,C\}, & r=0,\\
+        \{B\}, & 0<r<1,\\
+        \{A,B\}, & r=1.
+    \end{cases}}
+    \]
+    Mixed best responses are all mixtures supported on the listed sets.
+    If $\operatorname{BR}_1$ means the pure strategies that are best
+    responses to some belief, then $\boxed{\operatorname{BR}_1=\{A,B,C\}}$.
+
+    \item For $p,q\geq0$, $p+q\leq1$, player 2's expected payoffs are
+    \begin{align*}
+        u_2(D;p,q)&=0p+q+2(1-p-q)=2-2p-q,\\
+        u_2(E;p,q)&=2p+0q+(1-p-q)=1+p-q.
+    \end{align*}
+    Since $u_2(D;p,q)-u_2(E;p,q)=1-3p$,
+    \[
+    \boxed{
+    \operatorname{BR}_2(p,q)=
+    \begin{cases}
+        \{D\}, & p<\frac13,\\
+        \{D,E\}, & p=\frac13,\\
+        \{E\}, & p>\frac13.
+    \end{cases}}
+    \]
+    At $p=1/3$, every mixture of $D$ and $E$ is optimal.
+    The best response does not otherwise depend on $q$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Strict dominance.
+\begin{enumerate}[label = (\alph*)]
+    \item The strictly dominated pure strategy is $\boxed{B}$.
+    Any strategy that puts no probability on $B$ can be written as
+    $\sigma_1=\lambda A+(1-\lambda)C$, with $\lambda\in[0,1]$.
+    Its payoffs against $D$ and $E$ are $3\lambda$ and
+    $3(1-\lambda)$, respectively. It strictly dominates $B$ exactly when
+    \[
+        3\lambda>1\quad\text{and}\quad3(1-\lambda)>1,
+        \qquad\text{or equivalently}\qquad
+        \frac13<\lambda<\frac23.
+    \]
+    Thus all the requested dominating strategies are
+    \[
+        \boxed{\left\{\lambda A+(1-\lambda)C:
+        \frac13<\lambda<\frac23\right\}.}
+    \]
+    The endpoints yield equality against one column and hence do not
+    give strict dominance. Neither $A$ nor $C$ is strictly dominated:
+    $A$ attains the maximum possible payoff $3$ against $D$, and $C$
+    attains the maximum possible payoff $3$ against $E$.
+
+    \item Let $\tau_i$ strictly dominate $\sigma_i$. Allowing mixed
+    strategies, define, for any $t\in(0,1)$,
+    \[
+        \rho_i^t=(1-t)\sigma_i+t\tau_i.
+    \]
+    Expected utility is linear in the player's own mixing probabilities,
+    so for every $s_{-i}$,
+    \begin{align*}
+        &u_i(\rho_i^t,s_{-i})-u_i(\sigma_i,s_{-i})\\
+        &\qquad=t\bigl[u_i(\tau_i,s_{-i})
+                       -u_i(\sigma_i,s_{-i})\bigr]>0.
+    \end{align*}
+    Therefore every $\rho_i^t$ strictly dominates $\sigma_i$.
+    Since $\tau_i\ne\sigma_i$, distinct $t\in(0,1)$ give distinct
+    strategies, proving that there are infinitely many such strategies.
+    The inequalities also hold against mixed opponent strategies by
+    taking expectations. \hfill$\square$
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+Beauty contests with actions in $[1,2]$.
+\begin{solution}
+Let there be $n\geq3$ players, as the question specifies many players.
+Write $a$ for one's own action and $S=\sum_{j\ne i}a_j$ for the others'
+sum. Then $S\in[n-1,2(n-1)]$ and $\bar a=(a+S)/n$.
+\begin{enumerate}[label = (\alph*)]
+    \item With $u_i=-(a-\bar a)^2$, \textbf{no pure strategy is strictly
+    dominated}. To see this, fix any $a\in[1,2]$ and suppose every other
+    player chooses $a$. Choosing $a$ then gives payoff $0$, the largest
+    possible payoff. Deviating to $b\ne a$ gives
+    \[
+        -\left(b-\frac{b+(n-1)a}{n}\right)^2
+        =-\left(\frac{n-1}{n}\right)^2(b-a)^2<0.
+    \]
+    Consequently, no alternative pure or mixed strategy can give a
+    strictly higher payoff against this opponents' action profile.
+    Since this reasoning applies to every $a\in[1,2]$, none is
+    strictly dominated.
+
+    \item With $u_i=-(a-2\bar a)^2$, \textbf{all pure strategies in
+    $[1,2)$ are strictly dominated by $2$}. Holding the other players'
+    actions fixed, the payoff is
+    \[
+        u_i(a,S)=-\frac{\bigl((n-2)a-2S\bigr)^2}{n^2}.
+    \]
+    For $n>2$, this payoff is strictly increasing in $a$ on $[1,2]$,
+    because
+    \[
+        \frac{\partial u_i(a,S)}{\partial a}
+        =\frac{2(n-2)}{n^2}\bigl[2S-(n-2)a\bigr]>0,
+    \]
+    where $2S-(n-2)a\geq2(n-1)-2(n-2)=2>0$.
+    Thus $u_i(2,S)>u_i(a,S)$ for every $a<2$ and every feasible $S$.
+    Action $2$ is the unique best response to every opponents' profile,
+    so it cannot be strictly dominated. The requested set is therefore
+    \[
+        \boxed{[1,2).}
+    \]
+\end{enumerate}
+\end{solution}
+\end{problem}
+
+\end{document}
