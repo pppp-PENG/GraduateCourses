@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789463457.08436 "d:/codes/GraduateCourses/ECO6112 Game Theory and Business Applications/hw1/text/hw1.tex" "hw1.pdf" "hw1" 1789463459.44389 0
+["pdflatex"] 1790392389.79437 "d:/codes/GraduateCourses/ECO6112 Game Theory and Business Applications/hw1/text/hw1.tex" "hw1.pdf" "hw1" 1790392391.6602 0
   "c:/Windows/Fonts/msyh.ttc" 1767423324 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "d:/codes/GraduateCourses/ECO6112 Game Theory and Business Applications/hw1/text/hw1.tex" 1789463450 6616 e9b61ad687855ba4e0cb9867182bbc89 ""
+  "d:/codes/GraduateCourses/ECO6112 Game Theory and Business Applications/hw1/text/hw1.tex" 1790392389 6677 98026d3231700a07a9ec9589fa1cddb0 ""
   "d:/programs/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1757555838 2971 def0b6c1f0b107b3b936def894055589 ""
   "d:/programs/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1757557535 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/programs/texlive/2025/texmf-dist/fonts/sfd/ttf2pk/UGBK.sfd" 1757601054 182544 bcd31d5d273400b38612a969fcab55f9 ""
@@ -161,8 +161,8 @@
   "d:/programs/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1757601827 5574057 72d12c42828dd29cd2b63e4ce1dfbbfc ""
   "d:/programs/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1757602350 3605778 d277370de469639aac81249403a28ef0 ""
   "d:/programs/texlive/2025/texmf.cnf" 1757601790 713 e69b156964470283e0530f5060668171 ""
-  "hw1.aux" 1789463459 260 46fe7fc27ef1608be4c8b5a2c58de52a "pdflatex"
-  "hw1.tex" 1789463450 6616 e9b61ad687855ba4e0cb9867182bbc89 ""
+  "hw1.aux" 1790392391 260 46fe7fc27ef1608be4c8b5a2c58de52a "pdflatex"
+  "hw1.tex" 1790392389 6677 98026d3231700a07a9ec9589fa1cddb0 ""
   (generated)
   "hw1.aux"
   "hw1.log"
