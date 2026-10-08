@@ -1,0 +1,412 @@
+\documentclass[12pt, a4paper, oneside]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm, amssymb, bm, booktabs, color, enumitem, float, graphicx, hyperref, mathrsfs, titling}
+\usepackage[UTF8, scheme = plain]{ctex}
+\usepackage{bookmark}
+\usepackage{graphicx, minted, listings, subfigure}
+\usepackage{grffile}
+\usepackage[margin=2.5cm]{geometry}
+\title{\textbf{Homework 1}}
+\setlength{\droptitle}{-4em}
+\author{PENG Qiheng \\ Student ID\: 225040065}
+\date{\today}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent{Problem \arabic{problemname}. }}{\par}
+\newenvironment{solution}{\par\noindent{Solution. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\textbf{Conditional probability}
+\begin{enumerate}[label = (\alph*)]
+    \item By the law of total probability,
+    \[
+        P(A)=P(A\mid W)P(W)+P(A\mid F)P(F)
+        =\frac15\cdot\frac34+\frac45\cdot\frac14
+        =\boxed{\frac7{20}}.
+    \]
+    \item By Bayes' formula,
+    \[
+        P(F\mid A)=\frac{P(A\mid F)P(F)}{P(A)}
+        =\frac{(4/5)(1/4)}{7/20}=\boxed{\frac47}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{Transition matrices and the Markov property}
+\begin{enumerate}[label = (\alph*)]
+    \item A transition matrix must have nonnegative entries and each row
+    must sum to one. Thus $A$ is valid. Matrix $B$ is invalid because
+    its row sums are $1.1$ and $0.9$. Matrix $C$ is invalid because
+    $c_{12}=-0.1<0$ (and $c_{11}=1.1>1$).
+    \item By the Markov property and time homogeneity,
+    \[
+        P(X_2=1\mid X_1=0,X_0=1)
+        =P(X_2=1\mid X_1=0)=a_{01}=\boxed{0.4}.
+    \]
+    \item No. The next state is conditionally independent of earlier
+    states \emph{given the present state}; it can still depend on the
+    present state. For example, under $A$,
+    \[
+        P(X_{n+1}=1\mid X_n=0)=0.4,\qquad
+        P(X_{n+1}=1\mid X_n=1)=0.8.
+    \]
+    Whenever both conditioning states have positive probability, these
+    unequal probabilities rule out independence.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{A weather model}
+\begin{enumerate}[label = (\alph*)]
+    \item In state order $(R,D)$,
+    \[
+        \boxed{P=\begin{pmatrix}3/4&1/4\\1/4&3/4\end{pmatrix}}.
+    \]
+    \item Matrix multiplication gives
+    \[
+        P^2=\begin{pmatrix}
+        (3/4)^2+(1/4)^2&2(3/4)(1/4)\\
+        2(3/4)(1/4)&(1/4)^2+(3/4)^2
+        \end{pmatrix}
+        =\boxed{\begin{pmatrix}5/8&3/8\\3/8&5/8\end{pmatrix}}.
+    \]
+    \item The two-step transition probability is
+    \[
+        P(X_2=R\mid X_0=R)=(P^2)_{RR}=\boxed{\frac58}.
+    \]
+    The specified path has probability
+    \[
+        P(X_1=D,X_2=R\mid X_0=R)
+        =p_{RD}p_{DR}=\frac14\cdot\frac14=\boxed{\frac1{16}}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{An initial distribution}
+\begin{solution}
+Using row vectors in state order $(0,1,2)$,
+\begin{align*}
+    \mu_1&=\mu_0P
+    =\left(\frac12\cdot\frac12+\frac12\cdot\frac14,
+    \frac12\cdot\frac12+\frac12\cdot\frac12,
+    \frac12\cdot\frac14\right)
+    =\boxed{\left(\frac38,\frac12,\frac18\right)},\\
+    \mu_2&=\mu_1P
+    =\left(\frac3{16}+\frac18,
+    \frac3{16}+\frac14+\frac1{16},
+    \frac18+\frac1{16}\right)
+    =\boxed{\left(\frac5{16},\frac12,\frac3{16}\right)}.
+\end{align*}
+Consequently,
+\[
+    E[X_2]=0\cdot\frac5{16}+1\cdot\frac12
+    +2\cdot\frac3{16}=\boxed{\frac78}.
+\]
+\end{solution}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{An urn with two balls}
+\begin{enumerate}[label = (\alph*)]
+    \item The state space is $\{0,1,2\}$ and $X_0=2$. From state $i$,
+    selecting a red ball decreases the count with probability $i/2$;
+    selecting a blue ball increases it with probability $(2-i)/2$.
+    Hence, in order $(0,1,2)$,
+    \[
+        \boxed{P=\begin{pmatrix}0&1&0\\1/2&0&1/2\\0&1&0\end{pmatrix}}.
+    \]
+    \item Since $X_1=1$ with probability one,
+    \[
+        \boxed{\mathcal L(X_2)=\left(\frac12,0,\frac12\right)}
+        \quad\text{in order }(0,1,2).
+    \]
+    \item Just before the third selection, the urn is described by
+    $X_2$. Conditional on $X_2=i$, the chance of selecting red is $i/2$.
+    Therefore,
+    \[
+        P(\text{third selected ball is red})
+        =\sum_{i=0}^2\frac{i}{2}P(X_2=i)
+        =0\cdot\frac12+1\cdot\frac12=\boxed{\frac12}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{Two consecutive heads}
+\begin{enumerate}[label = (\alph*)]
+    \item A tail resets state 0 or 1 to 0, whereas a head advances it
+    by one. State 2 is absorbing, so
+    \[
+        \boxed{P=\begin{pmatrix}1/2&1/2&0\\1/2&0&1/2\\0&0&1\end{pmatrix}}.
+    \]
+    \item Starting from $\mu_0=(1,0,0)$, repeated multiplication gives
+    \[
+        \mu_2=\left(\frac12,\frac14,\frac14\right),\quad
+        \mu_3=\left(\frac38,\frac14,\frac38\right),\quad
+        \mu_4=\left(\frac5{16},\frac3{16},\frac12\right).
+    \]
+    Since state 2 records success by that time,
+    $\boxed{P(N\leq4)=\mu_4(2)=1/2}$.
+    \item Absorption first at time 4 has probability
+    \[
+        P(N=4)=P(N\leq4)-P(N\leq3)
+        =\frac12-\frac38=\boxed{\frac18}.
+    \]
+    Equivalently, the only such sequences are $HTHH$ and $TTHH$,
+    each with probability $1/16$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{First-step analysis in a fair game}
+\begin{enumerate}[label = (\alph*)]
+    \item The boundary values are $\boxed{h_0=0,\ h_3=1}$.
+    \item Conditioning on the first play gives
+    \[
+        h_1=\frac12h_0+\frac12h_2=\frac12h_2,\qquad
+        h_2=\frac12h_1+\frac12h_3=\frac12h_1+\frac12.
+    \]
+    \item Substituting the second equation into the first,
+    \[
+        h_1=\frac14h_1+\frac14,
+        \qquad\boxed{h_1=\frac13,\quad h_2=\frac23}.
+    \]
+    Absorption at a boundary occurs almost surely. Thus, starting
+    with one unit, the ruin probability is $\boxed{1-h_1=2/3}$.
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{A biased game}
+\begin{enumerate}[label = (\alph*)]
+    \item For upper boundary $M$, the gambler's ruin formula is
+    \[
+        h_i=\frac{1-(q/p)^i}{1-(q/p)^M}\qquad(p\ne q).
+    \]
+    Here $p=2/3$, $q=1/3$, $M=4$, and $i=1$. Therefore,
+    \begin{align*}
+        P(\text{reach 4 before 0})
+        &=\frac{1-1/2}{1-(1/2)^4}
+        =\boxed{\frac8{15}},\\
+        P(\text{ruin})&=1-\frac8{15}=\boxed{\frac7{15}}.
+    \end{align*}
+    \item In the fair case, $h_i=i/M$, so the success probability is
+    $\boxed{1/4}$. The upward bias increases it from $1/4$ to $8/15$,
+    a difference of
+    \[
+        \frac8{15}-\frac14=\frac{17}{60}>0.
+    \]
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{Communicating classes}
+\begin{enumerate}[label = (\alph*)]
+    \item The communicating classes are
+    \[
+        \boxed{\{0,1\},\quad\{2\},\quad\{3\}}.
+    \]
+    Classes $\{0,1\}$ and $\{3\}$ are closed. Class $\{2\}$ is not
+    closed because state 2 can move to 0 or 3.
+    \item States 0 and 1 are recurrent (indeed, positive recurrent)
+    because they form a finite closed irreducible class. State 3 is
+    absorbing and hence also positive recurrent. State 2 is transient:
+    it leaves for 0 or 3 with probability $1/2$ on the first step,
+    after which it can never return. Its positive-time return
+    probability is only $p_{22}=1/2<1$.
+    \item Yes. The path $2\to0\to1$ has probability
+    \[
+        p_{20}p_{01}=\frac14\cdot\frac12=\boxed{\frac18}>0.
+    \]
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{First return versus a visit at a fixed time}
+\begin{enumerate}[label = (\alph*)]
+    \item Staying in state 2 for one step counts as a positive return:
+    \[
+        \boxed{P(T_2^+=1\mid X_0=2)=p_{22}=\frac12}.
+    \]
+    If the first step leaves 2, the chain enters one of the closed
+    classes and can never return. Hence
+    \[
+        \boxed{P(T_2^+<\infty\mid X_0=2)=\frac12}.
+    \]
+    \item A first return at time 2 would require leaving 2 at time 1,
+    which prevents any return. Therefore,
+    \[
+        \boxed{P(T_2^+=2\mid X_0=2)=0}.
+    \]
+    A visit at time 2 is possible via $2\to2\to2$, giving
+    \[
+        \boxed{P(X_2=2\mid X_0=2)=p_{22}^2=\frac14}.
+    \]
+    On this path the first return is at time 1. A fixed-time visit
+    permits earlier returns; a first return does not.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{An unrestricted random walk}
+\begin{enumerate}[label = (\alph*)]
+    \item Returning at time 2 requires increments $(+1,-1)$ or
+    $(-1,+1)$. Thus
+    \[
+        P(X_2=0\mid X_0=0)=pq+qp
+        =2\cdot\frac34\cdot\frac14=\boxed{\frac38}.
+    \]
+    \item Using the stated return-probability formula,
+    \[
+        f_0=2\min\{p,q\}=2\cdot\frac14=\boxed{\frac12}.
+    \]
+    Since $f_0<1$, state 0 is \textbf{transient}.
+    \item When $p=q=1/2$, state 0 is \textbf{null recurrent}.
+    Its positive return time $T_0^+=\min\{n\geq1:X_n=0\}$ is finite
+    almost surely, but $\boxed{E[T_0^+\mid X_0=0]=\infty}$.
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{A stationary distribution}
+\begin{enumerate}[label = (\alph*)]
+    \item The balance and normalization equations give
+    \[
+        \pi_W=\frac34\pi_W+\frac12\pi_F,
+        \qquad \pi_W+\pi_F=1.
+    \]
+    Hence $\pi_W=2\pi_F$, and in state order $(W,F)$,
+    \[
+        \boxed{\pi=\left(\frac23,\frac13\right)}.
+    \]
+    \item The chain is finite and irreducible, so the long-run
+    proportion of faulty days is $\boxed{\pi_F=1/3}$, regardless
+    of its initial state.
+    \item Let $T_W^+=\min\{n\geq1:X_n=W\}$. The mean return-time
+    formula for a positive recurrent state gives
+    \[
+        \boxed{E[T_W^+\mid X_0=W]=\frac1{\pi_W}=\frac32\text{ days}}.
+    \]
+    To check directly, let $m_F$ be the expected time to hit $W$
+    from $F$. Then $m_F=1+\frac12m_F$, so $m_F=2$ and
+    $E[T_W^+\mid X_0=W]=1+\frac14m_F=3/2$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{A three-state chain}
+\begin{enumerate}[label = (\alph*)]
+    \item There are positive-probability transitions in both
+    directions along $0\leftrightarrow1\leftrightarrow2$, so all
+    states communicate and the chain is irreducible. Each state
+    has $p_{ii}=1/2>0$, so a return in one step is possible and
+    every state has period 1. Thus the chain is aperiodic.
+    \item Writing $\pi=(\pi_0,\pi_1,\pi_2)$, the equations are
+    \[
+        \begin{cases}
+            \pi_0=\frac12\pi_0+\frac14\pi_1,\\
+            \pi_1=\frac12\pi_0+\frac12\pi_1+\frac12\pi_2,\\
+            \pi_2=\frac14\pi_1+\frac12\pi_2,\\
+            \pi_0+\pi_1+\pi_2=1.
+        \end{cases}
+    \]
+    The first and third equations yield
+    $\pi_0=\pi_2=\pi_1/2$. Normalization gives $2\pi_1=1$,
+    so $\boxed{\pi=(1/4,1/2,1/4)}$; this also satisfies the second equation.
+    \item A finite irreducible chain is positive recurrent. Together
+    with aperiodicity, this ensures convergence to its unique
+    stationary distribution. Therefore,
+    \[
+        \boxed{\lim_{n\to\infty}P(X_n=2\mid X_0=0)=\pi_2=\frac14}.
+    \]
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{Stationarity and periodicity}
+\begin{enumerate}[label = (\alph*)]
+    \item Both states return exactly at positive even times. Their
+    period is $\gcd\{2,4,6,\ldots\}=\boxed{2}$.
+    Since $\pi P=(\pi_1,\pi_0)$, stationarity and normalization
+    give $\boxed{\pi=(1/2,1/2)}$.
+    \item Starting from 0, the chain alternates deterministically:
+    \[
+        \boxed{P(X_n=0\mid X_0=0)=
+        \begin{cases}1,&n\text{ even},\\0,&n\text{ odd}.\end{cases}}
+    \]
+    This probability has no limit as $n\to\infty$.
+    \item If $X_0\sim\pi$, then $\pi P^n=\pi$ for every $n\geq0$.
+    Hence $\boxed{P(X_n=0)=1/2}$ for every $n\geq0$.
+\end{enumerate}
+\end{problem}
+
+\newpage
+\begin{problem}
+\textbf{Long-run average cost}
+\begin{enumerate}[label = (\alph*)]
+    \item Using $\pi=(2/3,1/3)$ from Problem 12, the long-run
+    average cost per day is
+    \[
+        \overline c=20\pi_W+80\pi_F
+        =20\cdot\frac23+80\cdot\frac13
+        =\boxed{40\text{ units}}.
+    \]
+    \item Given that the machine is working today, tomorrow's
+    expected cost is
+    \[
+        E[c(X_{n+1})\mid X_n=W]
+        =20\cdot\frac34+80\cdot\frac14
+        =\boxed{35\text{ units}}.
+    \]
+    \item The transition matrix and thus the stationary distribution
+    are unchanged. The increase in long-run average daily cost is
+    \[
+        (110-80)\pi_F=30\cdot\frac13
+        =\boxed{10\text{ units}}.
+    \]
+    The new long-run average is $50$ units per day.
+\end{enumerate}
+\end{problem}
+
+\bigskip
+\begin{problem}
+\textbf{Short conceptual questions}
+\begin{enumerate}[label = (\alph*)]
+    \item \textbf{True.} A finite irreducible Markov chain has a
+    unique stationary distribution with $\pi_i>0$ for every state.
+    Each state is positive recurrent, with mean positive return
+    time $E_i[T_i^+]=1/\pi_i<\infty$.
+    \item \textbf{False.} In Problem 14, start with
+    $\pi=(1/2,1/2)$. Every marginal distribution remains $\pi$, but
+    \[
+        P(X_0=0,X_1=0)=0
+        \ne P(X_0=0)P(X_1=0)=\frac14.
+    \]
+    Thus stationarity does not imply independence at consecutive times.
+    \item \textbf{False.} The symmetric random walk on $\mathbb Z$
+    is recurrent, but the mean positive return time to 0 is infinite.
+    This is null recurrence; finite mean return time requires
+    positive recurrence.
+\end{enumerate}
+\end{problem}
+
+\end{document}
